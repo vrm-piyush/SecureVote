@@ -1,7 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+// frontend/src/App.js
 
-function App() {
+import React from "react";
+import { getAuth } from "supertokens-auth-react";
+import logo from "./logo.svg";
+import "./App.css";
+
+const App = () => {
+  const auth = getAuth();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +26,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
