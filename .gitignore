@@ -130,3 +130,5 @@ dist
 .pnp.*
 
 D:\Codes\SecureVote\backend\Set
+
+.env
