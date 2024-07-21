@@ -2,10 +2,13 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
 const cors = require("cors");
 const { middleware } = require("supertokens-node/framework/express");
 const Session = require("supertokens-node/recipe/session");
 const EmailPassword = require("supertokens-node/recipe/emailpassword");
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
