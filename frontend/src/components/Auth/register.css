@@ -1,0 +1,254 @@
+/* Registration Form */
+.registration-page {
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.registration-page .overlap-wrapper {
+  background: linear-gradient(
+    180deg,
+    rgb(36.25, 48.3, 62.67) 0%,
+    rgb(65.74, 87.61, 113.67) 50%,
+    rgb(95.24, 126.91, 164.67) 100%
+  );
+  background-color: rgba(255, 255, 255, 1);
+  height: 1024px;
+  width: 1440px;
+}
+
+.registration-page .overlap-2 {
+  background: linear-gradient(
+    180deg,
+    rgb(73, 99, 130) 0%,
+    rgb(44.36, 60.16, 79) 50%,
+    rgb(15.72, 21.32, 28) 100%
+  );
+  height: 1671px;
+  position: relative;
+}
+
+.registration-page .footer {
+  background-color: transparent;
+  height: 129px;
+  left: 120px;
+  position: absolute;
+  top: 1475px;
+  width: 1199px;
+}
+
+.registration-page .copyright-2 {
+  height: 23px;
+  left: 438px;
+  position: absolute;
+  top: 106px;
+  width: 331px;
+}
+
+.registration-page .copyright-instance {
+  height: 18px !important;
+  left: 67px !important;
+  position: absolute !important;
+  top: 3px !important;
+  width: 20px !important;
+}
+
+.registration-page .secure-vote {
+  color: #ffffffb2;
+  font-family: "Crimson Text", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  height: 23px;
+  left: 90px;
+  letter-spacing: 0;
+  line-height: 25px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  white-space: nowrap;
+  width: 237px;
+}
+
+.registration-page .text-wrapper-12 {
+  color: #ffffffb2;
+  font-family: "Crimson Text", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  height: 23px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 25px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  white-space: nowrap;
+  width: 64px;
+}
+
+.registration-page .logo {
+  height: 27px;
+  left: 537px;
+  object-fit: cover;
+  position: absolute;
+  top: 68px;
+  width: 125px;
+}
+
+.registration-page .group {
+  height: 39px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1199px;
+}
+
+.registration-page .social-media {
+  height: 39px;
+  left: 520px;
+  position: absolute;
+  top: 0;
+  width: 158px;
+}
+
+.registration-page .line {
+  height: 2px;
+  left: 723px;
+  object-fit: cover;
+  position: absolute;
+  top: 20px;
+  width: 476px;
+}
+
+.registration-page .img {
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 21px;
+  width: 470px;
+}
+
+.registration-page .guidelines {
+  height: 529px;
+  left: 120px;
+  position: absolute;
+  top: 861px;
+  width: 539px;
+}
+
+.registration-page .guidelines-for-voter-wrapper {
+  background: linear-gradient(
+    180deg,
+    rgba(92.26, 115.47, 141, 0.2) 0%,
+    rgba(159, 199, 243, 0.2) 100%
+  );
+  border-radius: 15px;
+  height: 529px;
+  position: relative;
+  width: 537px;
+}
+
+.registration-page .guidelines-for-voter {
+  color: transparent;
+  font-family: "Gentium Book Basic", Helvetica;
+  font-size: 30px;
+  font-weight: 400;
+  height: 460px;
+  left: 35px;
+  letter-spacing: 0;
+  line-height: 30px;
+  position: absolute;
+  top: 34px;
+  width: 468px;
+}
+
+.registration-page .span {
+  color: #cdf006;
+  font-weight: 700;
+}
+
+.registration-page .text-wrapper-13 {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 20px;
+}
+
+.registration-page .text-wrapper-14 {
+  color: #ffffff;
+  font-family: "Battambang", Helvetica;
+  font-size: 20px;
+  line-height: 39.8px;
+}
+
+.registration-page .registration-instance {
+  left: 720px !important;
+  position: absolute !important;
+  top: 170px !important;
+}
+
+.registration-page .design-component-instance-node {
+  background-image: url(/assets/svg/Home/Registration_frame.svg) !important;
+  height: 940px !important;
+  left: unset !important;
+  width: unset !important;
+}
+
+.registration-page .registration-2 {
+  left: 39px !important;
+}
+
+.registration-page .registration-3 {
+  background-image: url(/assets/images/Reg_mask_group.png) !important;
+}
+
+.registration-page .registration-4 {
+  height: 32px !important;
+  left: 101px !important;
+  position: absolute !important;
+  top: 125px !important;
+}
+
+.registration-page .registration-5 {
+  left: 181px !important;
+}
+
+.registration-page .figure {
+  height: 562px;
+  left: 152px;
+  position: absolute;
+  top: 218px;
+  width: 322px;
+}
+
+.registration-page .header {
+  background-color: transparent;
+  height: 69px;
+  left: 60px;
+  position: absolute;
+  top: 40px;
+  width: 1320px;
+}
+
+.registration-page .back-btn-instance {
+  left: 0 !important;
+  position: absolute !important;
+  top: 16px !important;
+}
+
+.registration-page .back-btn-2 {
+  height: 1px !important;
+  left: 0 !important;
+  top: 16px !important;
+  width: 1px !important;
+}
+
+.registration-page .logo-2 {
+  height: 69px;
+  left: 1027px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 293px;
+}

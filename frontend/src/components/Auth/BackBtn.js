@@ -5,7 +5,11 @@ import "./loginPage.css";
 export const BackBtn = ({ property1, className }) => {
   return (
     <button className={`back-btn ${className}`}>
-      <img className="arrow" alt="Back" src="/assets/svg/back-arrow.svg" />
+      <img
+        className="arrow"
+        alt="Back"
+        src="/assets/svg/Login/back-arrow.svg"
+      />
       <div className="back">Back</div>
     </button>
   );

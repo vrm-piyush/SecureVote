@@ -11,9 +11,13 @@ export const LoginPage = () => {
     <div className="login-page">
       <div className="div-2">
         <header className="header">
-          <img className="logo" alt="Logo" src="/assets/svg/logo-header.svg" />
+          <img
+            className="logo"
+            alt="Logo"
+            src="/assets/svg/Login/logo-header.svg"
+          />
           <BackBtn
-            arrow="/assets/images/back-arrow.svg"
+            arrow="/assets/svg/Login/back-arrow.svg"
             className="back-btn-instance"
             property1="default"
           />
@@ -22,7 +26,7 @@ export const LoginPage = () => {
           <img
             className="login-logo"
             alt="Login logo"
-            src="/assets/svg/login-logo.svg"
+            src="/assets/svg/Login/login-logo.svg"
           />
           <div className="login-form">
             <div className="overlap">
@@ -43,10 +47,10 @@ export const LoginPage = () => {
               </div>
               <div className="password-wrapper">
                 <Password
-                  hideEye="/assets/svg/hide-eye.svg"
+                  hideEye="/assets/svg/Login/hide-eye.svg"
                   property1="default"
                   frame="/assets/images/Password_frame.png"
-                  vector="/assets/svg/key.svg"
+                  vector="/assets/svg/Login/key.svg"
                 />
               </div>
               <div className="forgot-password">Forgot Password?</div>
@@ -66,27 +70,27 @@ export const LoginPage = () => {
             <img
               className="line-left"
               alt="Line-left"
-              src="/assets/svg/Line-left.svg"
+              src="/assets/svg/Login/Line-left.svg"
             />
             <img
               className="twitter"
               alt="twitter"
-              src="/assets/svg/twitter.svg"
+              src="/assets/svg/Login/twitter.svg"
             />
             <img
               className="facebook"
               alt="facebook"
-              src="/assets/svg/facebook.svg"
+              src="/assets/svg/Login/facebook.svg"
             />
             <img
               className="instagram"
               alt="instagram"
-              src="/assets/svg/instagram.svg"
+              src="/assets/svg/Login/instagram.svg"
             />
             <img
               className="line-right"
               alt="Line"
-              src="/assets/svg/Line-right.svg"
+              src="/assets/svg/Login/Line-right.svg"
             />
           </div>
           <div className="footer-logo">
@@ -94,7 +98,7 @@ export const LoginPage = () => {
               <img
                 className="logo"
                 alt="Logo"
-                src="/assets/svg/logo-footer.svg"
+                src="/assets/svg/Login/logo-footer.svg"
               />
             </div>
             <div className="Copyright-footer">

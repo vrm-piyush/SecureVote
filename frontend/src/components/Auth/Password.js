@@ -6,9 +6,9 @@ export const Password = ({
   property1,
   className,
   frame = "/assets/images/Password_frame.png",
-  vector = "/assets/svg/key.png",
-  hideEye = "/assets/svg/hide-eye.svg",
-  eye = "/assets/svg/eye.svg",
+  vector = "/assets/svg/Login/key.svg",
+  hideEye = "/assets/svg/Login/hide-eye.svg",
+  eye = "/assets/svg/Login/eye.svg",
 }) => {
   return (
     <div className={`password ${className}`}>
