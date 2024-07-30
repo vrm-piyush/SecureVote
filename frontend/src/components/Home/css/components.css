@@ -1,35 +1,36 @@
-/* Contact */
-.contact {
+/* component.css */
+
+.header-links .home2,
+.header-links .features,
+.header-links .about,
+.header-links .contact {
   height: 25px;
   position: relative;
-  width: 74px;
-  left: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home2 .text-wrapper,
+.features .text-wrapper,
+.about .text-wrapper,
+.contact .text-wrapper {
+  color: #ffffff;
+  letter-spacing: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.home2:hover .text-wrapper,
+.features:hover .text-wrapper,
+.about:hover .text-wrapper,
+.contact:hover .text-wrapper {
+  color: #d7d7d7;
+  text-decoration: underline;
 }
 
 .contact .text-wrapper {
-  font-family: "Grenze", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 0px;
-  width: 74px;
-}
-
-.contact:hover .text-wrapper {
-  color: #d4d4d4;
-  text-decoration: underline;
-}
-
-.contact .text-wrapper.default {
-  color: #ffffff;
-}
-
-.contact .text-wrapper.on-click {
-  color: #b7b7b7;
-  text-decoration: underline;
+  font-size: 21px;
 }
 
 /* Login Button */
@@ -39,10 +40,11 @@
   border-radius: 7px;
   box-sizing: border-box;
   height: 35px;
-  position: relative;
-  width: 102px;
-  left: 295px;
-  top: 2px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .login-button .text-wrapper {
@@ -50,14 +52,9 @@
   font-family: "Philosopher", Helvetica;
   font-size: 18px;
   font-weight: 700;
-  height: 20px;
-  left: 24px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 7px;
-  width: 53px;
+  padding: 1px;
 }
 
 .login-button:hover {
@@ -69,12 +66,8 @@
   text-decoration: underline;
 }
 
-.footer-link {
-  font-family: "Outfit", Helvetica, sans-serif !important;
-  font-size: 18px;
-  font-weight: 400;
-  text-align: center;
-  color: #ffffff;
+/* Footer */
+.quick-links .footer-link {
   text-decoration: none;
   display: block;
   padding: 10px 15px;
@@ -98,40 +91,40 @@
 .features-link .text-wrapper,
 .login-link .text-wrapper,
 .register-link .text-wrapper {
+  font-family: "Outfit", Helvetica, sans-serif !important;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
   position: relative;
-  width: 100%; /* Ensure full width */
-  text-align: center; /* Center text */
-}
-
-/* Specific Styles for Each Link if needed */
-.twitter-link .text-wrapper {
-  width: auto;
-}
-.facebook-link .text-wrapper {
-  width: auto;
-}
-.instagram-link .text-wrapper {
-  width: auto;
-}
-.steps-link .text-wrapper {
-  width: auto;
-}
-.about-link .text-wrapper {
-  width: auto;
-}
-.features-link .text-wrapper {
-  width: auto;
-}
-.login-link .text-wrapper {
-  width: auto;
-}
-.register-link .text-wrapper {
-  width: auto;
+  height: 22px;
+  width: 95px;
+  letter-spacing: 1px;
+  text-align: left;
+  line-height: normal;
+  cursor: pointer;
 }
 
 /* Additional Styling */
-.footer-link:hover .text-wrapper {
-  color: #d4d4d4; /* Change color on hover */
+.twitter-link:hover .text-wrapper,
+.facebook-link:hover .text-wrapper,
+.instagram-link:hover .text-wrapper,
+.steps-link:hover .text-wrapper,
+.about-link:hover .text-wrapper,
+.features-link:hover .text-wrapper,
+.login-link:hover .text-wrapper,
+.register-link:hover .text-wrapper {
+  color: #d4d4d4;
+  text-decoration: underline;
+}
+
+.twitter-link .text-wrapper.on-click,
+.facebook-link .text-wrapper.on-click,
+.instagram-link .text-wrapper.on-click,
+.steps-link .text-wrapper.on-click,
+.about-link .text-wrapper.on-click,
+.features-link .text-wrapper.on-click {
+  color: #b7b7b7;
+  text-decoration: underline;
 }
 
 .footer-link:active .text-wrapper {
@@ -139,261 +132,59 @@
   text-decoration: underline; /* Underline on click */
 }
 
-/* Twitter Link
+/* Twitter Link */
 .twitter-link {
-  height: 22px;
   position: relative;
-  width: 60px;
-}
-
-.twitter-link .text-wrapper {
-  font-family: "Outfit", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  height: 23px;
-  left: 2px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
+  left: 118%;
   top: -1px;
 }
 
-.twitter-link .hover {
-  color: #d4d4d4;
-  text-decoration: underline;
-}
-
-.twitter-link .default {
-  color: #ffffff;
-}
-
-.twitter-link .on-click {
-  color: #b7b7b7;
-  text-decoration: underline;
-}
-
-/* Facebook Link 
+/* Facebook Link */
 .facebook-link {
-  height: 22px;
+  left: 234%;
   position: relative;
-  width: 95px;
+  top: -56px;
 }
 
-.facebook-link .text-wrapper {
-  font-family: "Outfit", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  height: 23px;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: -1px;
-  width: 95px;
-}
-
-.facebook-link .hover {
-  color: #d4d4d4;
-  text-decoration: underline;
-}
-
-.facebook-link .default {
-  color: #ffffff;
-}
-
-.facebook-link .on-click {
-  color: #b7b7b7;
-  text-decoration: underline;
-}
-
-/* Instagram Link 
+/* Instagram Link */
 .instagram-link {
-  height: 22px;
+  top: -56px;
   position: relative;
-  width: 85px;
 }
 
-.instagram-link .text-wrapper {
-  font-family: "Outfit", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  height: 23px;
-  left: 1px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: -1px;
-}
-
-.instagram-link .hover {
-  color: #d4d4d4;
-  text-decoration: underline;
-}
-
-.instagram-link .default {
-  color: #ffffff;
-}
-
-.instagram-link .on-click {
-  color: #b7b7b7;
-  text-decoration: underline;
-}
-
-/* Steps Link 
+/* Steps Link */
 .steps-link {
-  height: 22px;
   position: relative;
-  width: 110px;
+  left: 1%;
+  top: 54px;
 }
 
-.steps-link .text-wrapper {
-  font-family: "Outfit", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  height: 23px;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: -1px;
-  width: 110px;
-}
-
-.steps-link .hover {
-  color: #d4d4d4;
-  text-decoration: underline;
-}
-
-.steps-link .default {
-  color: #ffffff;
-}
-
-.steps-link .on-click {
-  color: #b7b7b7;
-  text-decoration: underline;
-}
-
-/* About Link 
+/* About Link */
 .about-link {
-  height: 22px;
-  position: relative;
-  width: 110px;
-}
-
-.about-link .text-wrapper {
-  color: #ffffff;
-  font-family: "Outfit", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  height: 23px;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
+  left: 119%;
   top: -1px;
-  width: 110px;
+  position: relative;
 }
 
-.about-link:hover .text-wrapper {
-  color: #d4d4d4;
-  text-decoration: underline;
-}
-
-/* Features Link 
+/* Features Link */
 .features-link {
-  height: 22px;
   position: relative;
-  width: 110px;
+  right: 116%;
 }
 
-.features-link .text-wrapper {
-  font-family: "Outfit", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  height: 23px;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: -1px;
-  width: 110px;
-}
-
-.features-link .default-false {
-  color: #b7b7b7;
-}
-
-.features-link .default-true {
-  color: #ffffff;
-}
-
-.features-link:hover .text-wrapper {
-  color: #d4d4d4;
-  text-decoration: underline;
-}
-
-/* Login Link 
+/* Login Link */
 .login-link {
-  height: 22px;
   position: relative;
-  width: 47px;
+  right: 116%;
+  top: 54px;
 }
 
-.login-link .text-wrapper {
-  font-family: "Outfit", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: -1px;
-}
-
-.login-link .hover {
-  color: #d4d4d4;
-  text-decoration: underline;
-}
-
-.login-link .default {
-  color: #ffffff;
-}
-
-.login-link .on-click {
-  color: #b7b7b7;
-  text-decoration: underline;
-}
-
-/* Register Link 
+/* Register Link */
 .register-link {
-  height: 22px;
-  position: relative;
-  width: 71px;
-}
-
-.register-link .text-wrapper {
-  color: #ffffff;
-  font-family: "Outfit", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
+  left: 1px;
   top: -1px;
+  position: relative;
 }
-
-.register-link:hover .text-wrapper {
-  color: #d4d4d4;
-  text-decoration: underline;
-} */
 
 /* Feedback */
 .feedback {
@@ -514,181 +305,49 @@
   border-radius: 7px;
 }
 
-/* ReadMore btn */
-.read-more-btn {
+/* Homepage buttons */
+.button {
   background-color: #217ce1;
   border-radius: 15px;
   height: 51px;
-  position: relative;
-  width: 220px;
-  top: 10px;
-  left: 270px;
+  width: 225px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.read-more-btn .text-wrapper {
+.button .text-wrapper {
   color: #ffffff;
-  height: 32px;
-  left: 33px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
+  font-family: "Outfit", Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
   text-align: center;
-  top: 12px;
-  width: 154px;
+  transition: background-clip 0.3s ease;
 }
 
-.read-more-btn .on-click-true {
-  background: linear-gradient(
-    180deg,
-    rgb(255, 255, 255) 0%,
-    rgb(197, 197, 197) 100%
-  );
+.button:hover {
+  background-color: #1955ca;
 }
 
-.read-more-btn:hover .text-wrapper {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgb(255, 255, 255) 0%,
-    rgb(213.99, 213.99, 213.99) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-/* Register Btn */
-.register-btn {
-  background-color: #217ce1;
-  border-radius: 15px;
-  height: 51px;
-  position: relative;
-  width: 210px;
-  top: 10px;
-  left: 0px;
-}
-
-.register-btn .text-wrapper {
-  color: #ffffff;
-  height: 32px;
-  left: 42px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 12px;
-  width: 128px;
-}
-
-.register-btn .on-click-true {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgb(255, 255, 255) 0%,
-    rgb(196.99, 196.99, 196.99) 100%
-  );
-}
-
-.register-btn:hover {
-  background-color: #217adc;
-}
-
-.register-btn:hover .text-wrapper {
+.button:hover .text-wrapper {
   background: radial-gradient(
     50% 50% at 50% 50%,
     rgb(255, 255, 255) 0%,
     rgb(213, 213, 213) 100%
   );
   background-clip: text;
-  -webkit-background-clip: text !important; /* Clips the background to the text */
-  -webkit-text-fill-color: transparent; /* Makes the text transparent, showing the background */
-  color: transparent; /* Fallback for non-WebKit browsers */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-/* About */
-.about {
-  height: 25px;
-  position: relative;
-  width: 100%;
-  top: 10px;
-  left: 205px;
-}
-
-.about .text-wrapper {
-  font-family: "Grenze", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: normal;
-  position: relative;
-  text-align: center;
-  width: 58px;
-}
-
-.about:hover .text-wrapper {
-  color: #d4d4d4;
-  text-decoration: underline;
-}
-
-.about .text-wrapper.default {
-  color: #ffffff;
-}
-
-.about .text-wrapper.on-click {
-  color: #b7b7b7;
-  text-decoration: underline;
-}
-
-/* Features */
-.features {
-  height: 25px;
-  position: relative;
-  width: 74px;
-  top: 10px !important;
-  left: 80px !important;
-}
-
-.features .text-wrapper {
-  color: #ffffff;
-  font-family: "Grenze", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: normal;
-  position: relative;
-}
-
-.features:hover .text-wrapper {
-  color: #d4d4d4;
-  text-decoration: underline;
-}
-
-.features .text-wrapper.default {
-  color: #ffffff;
-}
-
-.features .text-wrapper.on-click {
-  color: #b7b7b7;
-  text-decoration: underline;
-}
-
-/* Home */
-.home2 {
-  height: 25px;
-  position: absolute;
-  width: 74px;
-  top: 14px;
-  left: -3px;
-}
-
-.home2 .text-wrapper {
-  color: #ffffff;
-  letter-spacing: 0;
-  line-height: 25px;
-  position: absolute;
-  text-align: center;
-}
-
-.home2:hover .text-wrapper {
-  color: #d7d7d7;
-  text-decoration: underline;
+.button:hover .on-click-true {
+  background: linear-gradient(
+    180deg,
+    rgb(255, 255, 255) 0%,
+    rgb(197, 197, 197) 100%
+  );
 }

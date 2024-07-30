@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import "../css/home.css";
 import "../css/components.css";
 
-export const About = ({ property1, className }) => {
+export const About = ({
+  property1,
+  className,
+  divClassName,
+  onClick = false,
+}) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleMouseDown = () => {
@@ -12,7 +17,9 @@ export const About = ({ property1, className }) => {
 
   const handleMouseUp = () => {
     setIsClicked(false);
-    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    if (onClick) {
+      document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -22,7 +29,9 @@ export const About = ({ property1, className }) => {
       onMouseUp={handleMouseUp}
     >
       <div
-        className={`text-wrapper ${property1} ${isClicked ? "on-click" : ""}`}
+        className={`text-wrapper ${property1} ${divClassName} ${
+          isClicked ? "on-click" : ""
+        }`}
       >
         About
       </div>
@@ -33,4 +42,13 @@ export const About = ({ property1, className }) => {
 About.propTypes = {
   property1: PropTypes.oneOf(["hover", "on-click", "default"]),
   className: PropTypes.string,
+  divClassName: PropTypes.string,
+  onClick: PropTypes.bool,
+};
+
+About.defaultProps = {
+  property1: "default",
+  className: "",
+  divClassName: "",
+  onClick: false,
 };

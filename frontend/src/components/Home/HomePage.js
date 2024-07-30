@@ -41,8 +41,18 @@ export const HomePage = () => {
               </div>
             </div>
             <div id="home-buttons" className="buttons">
-              <RegisterBtn className="register-btn-instance" />
-              <ReadMoreBtn className="read-more-btn-instance" />
+              <RegisterBtn
+                onClick={true}
+                className="register-btn-instance"
+                divClassName="register-btn-instance-node"
+                property1="default"
+              />
+              <ReadMoreBtn
+                onClick={true}
+                className="read-more-btn-instance"
+                divClassName="read-more-btn-instance-node"
+                property1="default"
+              />
             </div>
           </div>
         </div>
@@ -344,52 +354,66 @@ export const HomePage = () => {
               src="/assets/svg/Home/FtDiv1.svg"
             />
             <div id="quick-links" className="quick-links">
+              <div className="quick-links-title">
+                <div className="text-wrapper-fl">Quick Links</div>
+              </div>
               <div className="footer-links">
                 <RegisterLink
+                  onClick={true}
                   className="register-link-instance"
                   divClassName="register-instance-node"
+                  property1="default"
                 />
                 <LoginLink
+                  onClick={true}
                   className="login-link-instance"
+                  divClassName="login-instance-node"
                   property1="default"
                 />
                 <FeaturesLink
+                  onClick={true}
                   className="features-instance"
                   divClassName="features-instance-node"
+                  property1="default"
                 />
                 <AboutLink
+                  onClick={true}
                   className="about-link-instance"
                   divClassName="about-instance-node"
+                  property1="default"
                 />
                 <StepsLink
+                  onClick={true}
                   className="steps-link-instance"
                   divClassName="steps-instance-node"
                   property1="default"
                 />
                 <InstagramLink
+                  onClick={false}
                   className="instagram-link-instance"
-                  divClassName="instagram-instance-node-3"
+                  divClassName="instagram-instance-node"
                   property1="default"
                 />
                 <FacebookLink
+                  onClick={false}
                   className="facebook-link-instance"
                   divClassName="facebook-instance-node"
                   property1="default"
                 />
                 <TwitterLink
+                  onClick={false}
                   className="twitter-link-instance"
                   divClassName="twitter-instance-node"
                   property1="default"
                 />
               </div>
-              <div className="text-wrapper-fl">Quick Links</div>
             </div>
             <img
               className="ft-div-2"
               alt="Footer division 2"
               src="/assets/svg/Home/FtDiv1.svg"
             />
-            <div className="contacts">
+            <div id="contacts" className="contacts">
               <p className="text-wrapper-f1">Contact</p>
               <p className="text-wrapper-f2"></p>
               <p className="text-wrapper-f3">+91 7598631245, +91 6236985219</p>
@@ -410,13 +434,35 @@ export const HomePage = () => {
         <div className="header-overlap">
           <div className="header-frame" />
           <div id="header-links" className="header-links">
-            <Home2 className="home2-instance" property1="default" />
-            <Features className="features-instance" property1="default" />
-            <About property1="default" className="about-instance" />
-            <Contact divClassName="contact-instance" property1="default" />
+            <Home2
+              onClick={true}
+              className="home2-instance"
+              divClassName="home2-instance-node"
+              property1="default"
+            />
+            <Features
+              onClick={true}
+              className="features-instance"
+              divClassName="features-instance-node"
+              property1="default"
+            />
+            <About
+              onClick={true}
+              property1="default"
+              divClassName="about-instance-node"
+              className="about-instance"
+            />
+            <Contact
+              onClick={true}
+              className="contact-instance"
+              divClassName="contact-instance-node"
+              property1="default"
+            />
             <LoginButton
+              onClick={true}
               className="login-button-instance"
               divClassName="login-button-instance-node"
+              property1="default"
             />
           </div>
           <img

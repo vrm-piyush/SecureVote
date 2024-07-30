@@ -1,12 +1,40 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
 import "../css/home.css";
 import "../css/components.css";
 
-export const FeaturesLink = ({ default1 = false, className, divClassName }) => {
+export const FeaturesLink = ({
+  className,
+  divClassName,
+  property1,
+  onClick = false,
+}) => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleMouseDown = () => {
+    setIsClicked(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsClicked(false);
+    if (onClick) {
+      document
+        .getElementById("features")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className={`features-link ${className}`}>
-      <div className={`text-wrapper default-${default1} ${divClassName}`}>
+    <div
+      className={`features-link ${className}`}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+    >
+      <div
+        className={`text-wrapper default-${property1} ${divClassName} ${
+          isClicked ? "on-click" : ""
+        }`}
+      >
         Features
       </div>
     </div>
@@ -14,5 +42,15 @@ export const FeaturesLink = ({ default1 = false, className, divClassName }) => {
 };
 
 FeaturesLink.propTypes = {
-  default1: PropTypes.bool,
+  onClick: PropTypes.bool,
+  className: PropTypes.string,
+  divClassName: PropTypes.string,
+  property1: PropTypes.oneOf(["hover", "on-click", "default"]),
+};
+
+FeaturesLink.defaultProps = {
+  onClick: false,
+  className: "",
+  divClassName: "",
+  property1: "default",
 };

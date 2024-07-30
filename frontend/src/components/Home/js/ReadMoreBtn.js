@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import "../css/home.css";
 import "../css/components.css";
 
-export const ReadMoreBtn = ({ onClick = false, className }) => {
+export const ReadMoreBtn = ({
+  onClick = false,
+  className,
+  divClassName,
+  property1,
+}) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleMouseDown = () => {
@@ -12,17 +17,19 @@ export const ReadMoreBtn = ({ onClick = false, className }) => {
 
   const handleMouseUp = () => {
     setIsClicked(false);
-    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    if (onClick) {
+      document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <div
-      className={`read-more-btn ${className}`}
+      className={`button read-more-btn ${className}`}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
     >
       <div
-        className={`text-wrapper on-click-${onClick} ${
+        className={`text-wrapper on-click-${onClick} ${property1} ${divClassName} ${
           isClicked ? "on-click" : ""
         }`}
       >
@@ -34,4 +41,14 @@ export const ReadMoreBtn = ({ onClick = false, className }) => {
 
 ReadMoreBtn.propTypes = {
   onClick: PropTypes.bool,
+  className: PropTypes.string,
+  divClassName: PropTypes.string,
+  property1: PropTypes.oneOf(["hover", "on-click", "default"]),
+};
+
+ReadMoreBtn.defaultProps = {
+  onClick: false,
+  className: "",
+  divClassName: "",
+  property1: "default",
 };

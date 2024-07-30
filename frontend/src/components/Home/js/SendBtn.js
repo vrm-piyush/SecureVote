@@ -6,8 +6,8 @@ import "../css/components.css";
 export const SendBtn = ({
   property1,
   className,
- arrow = "/assets/svg/Home/arrow.svg",
-  onClick = false,
+  arrow = "/assets/svg/Home/arrow.svg",
+  onClick,
 }) => {
   const [state, dispatch] = useReducer(reducer, {
     property1: property1 || "default",
@@ -21,6 +21,9 @@ export const SendBtn = ({
       }}
       onMouseLeave={() => {
         dispatch("mouse_leave");
+        //if (onClick) {
+        //  document.getElementById("contacts").scrollIntoView({ behavior: "smooth" });
+        //}
       }}
     >
       <Component
@@ -60,4 +63,11 @@ SendBtn.propTypes = {
   arrow: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,
+};
+
+SendBtn.defaultProps = {
+  property1: "default",
+  arrow: "/assets/svg/Home/arrow.svg",
+  className: "",
+  onClick: null,
 };

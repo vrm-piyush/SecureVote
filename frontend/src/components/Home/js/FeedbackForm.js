@@ -48,7 +48,7 @@ export const FeedbackForm = ({ className }) => {
         <SendBtn
           className="send-btn-instance"
           property1="default"
-          componentCarbonSendAlt="/assets/svg/Home/arrow.svg"
+          arrow="/assets/svg/Home/arrow.svg"
           onClick={handleFeedbackSend}
         />
       </div>

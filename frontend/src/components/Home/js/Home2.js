@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import "../css/home.css";
 import "../css/components.css";
 
-export const Home2 = ({ onClick = false, className }) => {
+export const Home2 = ({
+  onClick = false,
+  className,
+  divClassName,
+  property1,
+}) => {
   const [isClicked, setIsClicked] = useState(false);
   const handleMouseDown = () => {
     setIsClicked(true);
@@ -11,7 +16,11 @@ export const Home2 = ({ onClick = false, className }) => {
 
   const handleMouseUp = () => {
     setIsClicked(false);
-    document.getElementById("home-page").scrollIntoView({ behavior: "smooth" });
+    if (onClick) {
+      document
+        .getElementById("home-page")
+        .scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -20,7 +29,13 @@ export const Home2 = ({ onClick = false, className }) => {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
     >
-      <div className={`text-wrapper ${isClicked ? "on-click" : ""}`}>Home</div>
+      <div
+        className={`text-wrapper ${property1} ${divClassName} ${
+          isClicked ? "on-click" : ""
+        }`}
+      >
+        Home
+      </div>
     </div>
   );
 };
@@ -28,4 +43,13 @@ export const Home2 = ({ onClick = false, className }) => {
 Home2.propTypes = {
   onClick: PropTypes.bool,
   className: PropTypes.string,
+  divClassName: PropTypes.string,
+  property1: PropTypes.oneOf(["hover", "on-click", "default"]),
+};
+
+Home2.defaultProps = {
+  onClick: false,
+  className: "",
+  divClassName: "",
+  property1: "default",
 };

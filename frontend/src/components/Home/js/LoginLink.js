@@ -1,16 +1,54 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
 import "../css/home.css";
 import "../css/components.css";
 
-export const LoginLink = ({ property1, className }) => {
+export const LoginLink = ({
+  property1,
+  className,
+  divClassName,
+  onClick = false,
+}) => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleMouseDown = () => {
+    setIsClicked(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsClicked(false);
+    // if(onClick) {
+    //   document.getElementById("login").scrollIntoView({ behavior: "smooth" });
+    // }
+  };
+
   return (
-    <div className={`login-link ${className}`}>
-      <div className={`text-wrapper ${property1}`}>Login</div>
+    <div
+      className={`login-link ${className}`}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+    >
+      <div
+        className={`text-wrapper ${property1} ${divClassName} ${
+          isClicked ? "on-click" : ""
+        }`}
+      >
+        Login
+      </div>
     </div>
   );
 };
 
 LoginLink.propTypes = {
   property1: PropTypes.oneOf(["on-click", "hover", "default"]),
+  className: PropTypes.string,
+  divClassName: PropTypes.string,
+  onClick: PropTypes.bool,
+};
+
+LoginLink.defaultProps = {
+  property1: "default",
+  className: "",
+  divClassName: "",
+  onClick: false,
 };

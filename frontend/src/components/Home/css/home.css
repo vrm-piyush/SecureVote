@@ -88,25 +88,21 @@
 }
 
 .home-page .buttons {
-  height: 61px;
-  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 205px;
-  width: 490px;
+  gap: 50px;
+  width: auto;
 }
 
-.home-page .register-btn-instance {
-  position: absolute !important;
-  font-family: "Outfit", Helvetica !important;
+.buttons .register-btn-instance,
+.buttons .login-btn-instance {
+  position: static !important;
+  font-family: "Outfit", Helvetica, sans-serif !important;
   font-size: 25px !important;
   font-weight: 600 !important;
-}
-
-.home-page .read-more-btn-instance {
-  font-family: "Outfit", Helvetica !important;
-  font-size: 25px !important;
-  font-weight: 600 !important;
-  position: absolute !important;
 }
 
 .home-page .features-data-wrapper {
@@ -937,26 +933,28 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 46px;
+  top: 8vh;
   left: 53%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 500px;
   padding: 20px;
+  padding-top: 60px;
   box-sizing: border-box;
 }
 
-.quick-links .text-wrapper-fl {
+.quick-links .quick-links-title .text-wrapper-fl {
   color: #0587ff;
   font-family: "Inter", Helvetica;
   font-size: 24px;
   font-weight: 700;
-  left: 170px;
+  left: 175px;
+  top: -12px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .quick-links .footer-links {
@@ -977,6 +975,8 @@
 .quick-links .twitter-link-instance {
   position: relative;
   margin-bottom: 10px;
+  width: 100px;
+  height: 25px;
 }
 
 @media (max-width: 768px) {
@@ -1083,40 +1083,68 @@
   width: 100%;
 }
 
-.home-page .header-links {
-  align-items: center;
+.header-overlap .header-links {
   display: flex;
-  gap: 50px;
-  height: 45px;
-  left: 920px;
+  align-items: center;
+  justify-content: space-around;
   position: absolute;
-  top: 16px;
-  width: 460px;
+  top: 26px;
+  left: 75%;
+  transform: translateX(-50%);
+  padding: 0 20px;
+  width: max-content;
+  background-color: transparent;
+  z-index: 1000;
+  gap: 40px;
 }
 
-.home-page .contact-instance {
+.header-overlap .header-links > * {
+  padding: 0 10px; /* Adjust spacing between the links */
+  font-family: "Grenze", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.header-overlap .header-links > *:hover {
+  color: #d4d4d4;
+  text-decoration: underline;
+}
+
+.header-links .home2-instance,
+.header-links .features-instance,
+.header-links .about-instance,
+.header-links .contact-instance {
   font-family: "Grenze", Helvetica !important;
   font-size: 20px !important;
   font-weight: 700 !important;
+  color: #ffffff;
+  cursor: pointer;
 }
 
-.home-page .home2-instance {
-  font-family: "Grenze", Helvetica !important;
-  font-size: 20px !important;
-  font-weight: 700 !important;
-  position: absolute !important;
-}
-
-.home-page .login-button-instance {
+.header-links .login-button-instance {
+  font-family: "Philosopher", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
   border-radius: 10px !important;
   box-shadow: 0px 4px 4px #00000040 !important;
+  background-color: #0587ff;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
 }
 
-.home-page .login-button-2 {
-  font-family: "Grenze", Helvetica !important;
-  font-size: 20px !important;
-  height: 30px !important;
-  top: 0 !important;
+.header-links .login-button-instance:hover {
+  background-color: #1955ca;
+}
+
+.header-links .login-button-instance:hover .text-wrapper-1 {
+  color: #e4e3e3;
+  text-decoration: underline;
 }
 
 .home-page .logo-header {
