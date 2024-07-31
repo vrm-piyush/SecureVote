@@ -21,8 +21,22 @@ import "./css/components.css";
 
 export const HomePage = () => {
   const scrollToTop = () => {
-    document.getElementById("home-page").scrollIntoView({ behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const toggleBackToTopButton = () => {
+    const homeSection = document.querySelector(".home-page");
+    const backToTopButton = document.querySelector(".back-to-top");
+    const homeSectionHeight = homeSection.offsetHeight;
+
+    if (window.scrollY > homeSectionHeight) {
+      backToTopButton.classList.add("visible");
+    } else {
+      backToTopButton.classList.remove("visible");
+    }
+  };
+
+  window.addEventListener("scroll", toggleBackToTopButton);
 
   return (
     <div id="home-page" className="home-page">
@@ -62,27 +76,35 @@ export const HomePage = () => {
             <img
               className="features-div"
               alt="Features div"
-              src="features-div.svg"
+              src="/assets/svg/Home/features_line.svg"
             />
-            <div className="features-2">
+            <div className="features-list">
               <div className="secure">
-                <p className="secure-2">
+                <p className="secure-text">
                   Secure User Registration and Vote Counting
                 </p>
-                <img className="lock-img" alt="Lock img" src="lock-img.svg" />
+                <img
+                  className="lock-img"
+                  alt="Secure img"
+                  src="/assets/images/LockImg.png"
+                />
               </div>
               <div className="fair">
                 <div className="results-transparency">Results Transparency</div>
-                <img className="img" alt="Fair img" src="fair-img.svg" />
+                <img
+                  className="fair-img"
+                  alt="Fair img"
+                  src="/assets/svg/Home/FairImg.svg"
+                />
               </div>
               <div className="encrypted">
-                <p className="encrypted-2">
+                <p className="encrypted-text">
                   Encrypted Votes and End-to-End Encryption
                 </p>
                 <img
-                  className="img-2"
+                  className="encrypted-img"
                   alt="Encrypted img"
-                  src="encrypted-img.svg"
+                  src="/assets/images/EncryptedImg.png"
                 />
               </div>
               <div className="easy">
@@ -92,22 +114,26 @@ export const HomePage = () => {
                 <img
                   className="hand-cursor-img"
                   alt="Hand cursor img"
-                  src="hand-cursor-img.svg"
+                  src="/assets/images/HandCursorImg.png"
                 />
               </div>
               <div className="cheaper">
-                <p className="text-wrapper-16">
+                <p className="cheaper-text">
                   Cheaper than ballot voting system
                 </p>
                 <img
-                  className="img-2"
+                  className="low-price-img"
                   alt="Low price img"
-                  src="low-price-img.svg"
+                  src="/assets/images/LowPriceImg.png"
                 />
               </div>
               <div className="results">
-                <div className="text-wrapper-16">Real-Time Results</div>
-                <img className="img" alt="Time img" src="time-img.png" />
+                <div className="results-text">Real-Time Results</div>
+                <img
+                  className="results-img"
+                  alt="Time img"
+                  src="/assets/images/TimeImg.png"
+                />
               </div>
             </div>
           </div>
@@ -115,7 +141,11 @@ export const HomePage = () => {
         <div id="about" className="about-data-wrapper">
           <div className="about-data">
             <div className="overlap-4">
-              <img className="about-div" alt="About div" src="about-div.svg" />
+              <img
+                className="about-div"
+                alt="About div"
+                src="../../../public/assets/svg/Home/About_Div.svg"
+              />
               <div className="about-2">
                 <p className="about-desc-text">
                   Welcome to SecureVote, your ultimate solution for secure and
@@ -125,7 +155,11 @@ export const HomePage = () => {
                 </p>
                 <div className="overlap-group-2">
                   <div className="about-text">About</div>
-                  <img className="img-3" alt="About" src="about.svg" />
+                  <img
+                    className="img-3"
+                    alt="About"
+                    src="/assets/svg/Home/about_icon.svg"
+                  />
                 </div>
               </div>
             </div>
@@ -133,7 +167,7 @@ export const HomePage = () => {
               <img
                 className="mission-div"
                 alt="Mission div"
-                src="mission-div.svg"
+                src="/assets/svg/Home/About_Div.svg"
               />
               <div className="mission">
                 <div className="text-wrapper-17">Mission</div>
@@ -142,7 +176,11 @@ export const HomePage = () => {
                   a secure and efficient voting system that fosters confidence
                   in the results.
                 </p>
-                <img className="img-3" alt="Mission" src="mission.svg" />
+                <img
+                  className="img-3"
+                  alt="Mission"
+                  src="/assets/svg/Home/mission_icon.svg"
+                />
               </div>
             </div>
           </div>
@@ -150,7 +188,11 @@ export const HomePage = () => {
         <div id="why-secure-vote" className="why-secure-vote">
           <div className="why-data">
             <div className="overlap-group-3">
-              <img className="why-div" alt="Why div" src="why-div.svg" />
+              <img
+                className="why-div"
+                alt="Why div"
+                src="/assets/svg/Home/features_line.svg"
+              />
               <div className="why-heading">Why SecureVote?</div>
               <div className="flexcontainer">
                 <p className="text">
@@ -250,37 +292,53 @@ export const HomePage = () => {
                   &nbsp;&nbsp;&nbsp;&nbsp; Follow these easy steps
                 </span>
               </p>
-              <img className="septs-div" alt="Septs div" src="septs-div.svg" />
-              <div className="steps-3">
-                <div className="register-2">
+              <img
+                className="steps-div"
+                alt="steps div"
+                src="/assets/svg/Home/SeptsDiv.svg"
+              />
+              <div className="steps-data">
+                <div className="register-step">
                   <img
                     className="img-3"
                     alt="Register img"
-                    src="register-img.svg"
+                    src="/assets/svg/Home/Register_step_Img.svg"
                   />
                   <p className="register-text">
                     Register yourself by filling the required informations
                   </p>
                 </div>
-                <div className="login-2">
-                  <img className="img-4" alt="Login img" src="login-img.svg" />
+                <div className="login-step">
+                  <img
+                    className="img-4"
+                    alt="Login img"
+                    src="/assets/svg/Home/Login_step_Img.svg"
+                  />
                   <p className="login-text">Login as a Voter or Candidate</p>
                 </div>
                 <div className="candidate-card">
                   <div className="img-4">
-                    <img className="vector" alt="Vector" src="vector.svg" />
+                    <img
+                      className="vector"
+                      alt="Vector"
+                      src="/assets/svg/Home/Candidate_step_Img.svg"
+                    />
                   </div>
                   <div className="candidate-text">Go to Candidate card</div>
                 </div>
                 <div className="vote">
-                  <img className="vote-img" alt="Vote img" src="vote-img.svg" />
+                  <img
+                    className="vote-img"
+                    alt="Vote img"
+                    src="/assets/svg/Home/Vote_step_Img.svg"
+                  />
                   <p className="vote-text">Vote your candidate and submit</p>
                 </div>
-                <div className="results-2">
+                <div className="results-step">
                   <img
                     className="img-4"
                     alt="Results img"
-                    src="results-img.png"
+                    src="/assets/svg/Home/Results_step_Img.svg"
                   />
                   <p className="results-text">
                     View the results after election
@@ -289,11 +347,6 @@ export const HomePage = () => {
               </div>
             </div>
           </div>
-          <img
-            className="back-to-top"
-            alt="Back to top"
-            src="back-to-top.svg"
-          />
         </div>
         <footer id="footer" className="footer">
           <div className="footer-data">
@@ -474,6 +527,34 @@ export const HomePage = () => {
           />
         </div>
       </header>
+      {/* <img
+        className="back-to-top"
+        alt="Back to top"
+        src="/assets/svg/Home/Back_to_top.svg"
+        onClick={scrollToTop}
+      /> */}
+      <div className="back-to-top" onClick={scrollToTop}>
+        <svg
+          width="49"
+          height="49"
+          viewBox="0 0 49 49"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="0.125"
+            y="0.125"
+            width="48.75"
+            height="48.75"
+            rx="24.375"
+            fill="white"
+          />
+          <path
+            d="M25.2955 18.8295C24.8562 18.3902 24.1438 18.3902 23.7045 18.8295L16.545 25.989C16.1057 26.4283 16.1057 27.1406 16.545 27.58C16.9844 28.0193 17.6967 28.0193 18.136 27.58L24.5 21.216L30.864 27.58C31.3033 28.0193 32.0156 28.0193 32.455 27.58C32.8943 27.1406 32.8943 26.4283 32.455 25.989L25.2955 18.8295ZM25.625 20.375V19.625H23.375V20.375H25.625Z"
+            fill="black"
+          />
+        </svg>
+      </div>
     </div>
   );
 };

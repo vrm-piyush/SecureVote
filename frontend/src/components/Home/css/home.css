@@ -108,47 +108,49 @@
 .home-page .features-data-wrapper {
   background-color: #ffffff;
   height: 722px;
-  left: 0;
   position: absolute;
   top: 829px;
   width: 100%;
+  padding: 80px 0;
 }
 
-.home-page .features-data {
+.features-data-wrapper .features-data {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  display: inline-flex;
-  gap: 53.81px;
-  left: 354px;
-  position: relative;
-  top: 112px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
-.home-page .features-heading {
+.features-data .features-heading {
   color: #000000;
-  font-family: "Lora", Helvetica;
+  font-family: "Lora", Helvetica, sans-serif;
   font-size: 75px;
   font-weight: 700;
   letter-spacing: 0;
-  line-height: normal;
-  margin-left: -106.5px;
-  position: relative;
   transform: rotate(-90deg);
-  width: fit-content;
+  white-space: nowrap;
+  text-align: left;
 }
 
-.home-page .features-div {
-  height: 495.61px;
+.features-data .features-div {
+  height: 550px;
   position: relative;
-  width: 1px;
+  width: 8px;
+  left: -50px;
 }
 
-.home-page .features-2 {
+.features-data .features-list {
   height: 498.44px;
   position: relative;
-  width: 527.99px;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
-.home-page .secure {
+.features-list .secure {
   height: 52px;
   left: 0;
   position: absolute;
@@ -156,7 +158,7 @@
   width: 472px;
 }
 
-.home-page .secure-2 {
+.features-list .secure .secure-text {
   color: #010029;
   font-family: "Lora", Helvetica;
   font-size: 17.7px;
@@ -168,7 +170,7 @@
   top: 15px;
 }
 
-.home-page .lock-img {
+.features-list .secure .lock-img {
   height: 52px;
   left: 0;
   position: absolute;
@@ -176,7 +178,7 @@
   width: 59px;
 }
 
-.home-page .fair {
+.features-list .fair {
   height: 52px;
   left: 3px;
   position: absolute;
@@ -184,7 +186,7 @@
   width: 280px;
 }
 
-.home-page .results-transparency {
+.features-list .fair .results-transparency {
   color: #010029;
   font-family: "Lora", Helvetica;
   font-size: 17.7px;
@@ -196,7 +198,7 @@
   top: 15px;
 }
 
-.home-page .img {
+.features-list .fair .fair-img {
   height: 52px;
   left: 0;
   position: absolute;
@@ -204,7 +206,7 @@
   width: 52px;
 }
 
-.home-page .encrypted {
+.features-list .encrypted {
   height: 52px;
   left: 3px;
   position: absolute;
@@ -212,7 +214,7 @@
   width: 471px;
 }
 
-.home-page .encrypted-2 {
+.features-list .encrypted .encrypted-text {
   color: #010029;
   font-family: "Lora", Helvetica;
   font-size: 17.7px;
@@ -224,7 +226,8 @@
   top: 14px;
 }
 
-.home-page .img-2 {
+.features-list .encrypted .encrypted-img,
+.features-list .cheaper .low-price-img {
   height: 52px;
   left: 0;
   position: absolute;
@@ -232,7 +235,7 @@
   width: 51px;
 }
 
-.home-page .easy {
+.features-list .easy {
   height: 53px;
   left: 3px;
   position: absolute;
@@ -240,7 +243,7 @@
   width: 527px;
 }
 
-.home-page .easy-use {
+.features-list .easy .easy-use {
   color: #010029;
   font-family: "Lora", Helvetica;
   font-size: 17.7px;
@@ -252,7 +255,7 @@
   top: 16px;
 }
 
-.home-page .hand-cursor-img {
+.features-list .easy .hand-cursor-img {
   height: 53px;
   left: 0;
   position: absolute;
@@ -260,7 +263,7 @@
   width: 52px;
 }
 
-.home-page .cheaper {
+.features-list .cheaper {
   height: 52px;
   left: 3px;
   position: absolute;
@@ -268,7 +271,7 @@
   width: 384px;
 }
 
-.home-page .text-wrapper-16 {
+.features-list .cheaper .cheaper-text {
   color: #010029;
   font-family: "Lora", Helvetica;
   font-size: 17.7px;
@@ -280,12 +283,32 @@
   top: 15px;
 }
 
-.home-page .results {
+.features-list .results {
   height: 52px;
   left: 3px;
   position: absolute;
   top: 446px;
   width: 249px;
+}
+
+.features-list .results .results-text {
+  color: #010029;
+  font-family: "Lora", Helvetica;
+  font-size: 17.7px;
+  font-weight: 600;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 15px;
+}
+
+.features-list .results .results-img {
+  height: 52px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 52px;
 }
 
 .home-page .about-data-wrapper {
@@ -300,7 +323,13 @@
   top: 1551px;
   width: 100%;
 }
-
+.home-page .img {
+  height: 52px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 52px;
+}
 .home-page .about-data {
   height: 583px;
   left: 267px;
@@ -618,7 +647,7 @@
   font-weight: 600;
 }
 
-.home-page .septs-div {
+.home-page .steps-div {
   height: 1px;
   left: 2px;
   position: absolute;
@@ -626,7 +655,7 @@
   width: 400px;
 }
 
-.home-page .steps-3 {
+.home-page .steps-data {
   height: 484px;
   left: 0;
   position: absolute;
@@ -634,7 +663,7 @@
   width: 778px;
 }
 
-.home-page .register-2 {
+.home-page .register-step {
   height: 77px;
   left: 9px;
   position: absolute;
@@ -655,7 +684,7 @@
   width: 647px;
 }
 
-.home-page .login-2 {
+.home-page .login-step {
   height: 73px;
   left: 8px;
   position: absolute;
@@ -742,7 +771,7 @@
   width: 284px;
 }
 
-.home-page .results-2 {
+.home-page .results-step {
   height: 73px;
   left: 8px;
   position: absolute;
@@ -763,12 +792,39 @@
   width: 342px;
 }
 
-.home-page .back-to-top {
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
   height: 49px;
-  left: 1264px;
-  position: absolute;
-  top: 727px;
   width: 49px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  background-color: #217ce1;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px #00000040;
+  transition: opacity 0.4s, transform 0.4s;
+  opacity: 0;
+}
+
+.back-to-top svg {
+  border-radius: 50%;
+}
+
+.back-to-top.visible {
+  display: block;
+  opacity: 1;
+}
+
+.back-to-top:hover rect {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 15px #00000040;
+  fill: #1a63b8;
+}
+
+.back-to-top:hover path {
+  fill: #ffffff;
 }
 
 .home-page .footer {
