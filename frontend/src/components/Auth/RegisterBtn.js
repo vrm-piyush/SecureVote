@@ -5,7 +5,7 @@ import "./loginPage.css";
 export const RegisterBtn = ({ onClick = false, className }) => {
   return (
     <div className={`register-btn ${className}`}>
-      <div className="overlap-group">
+      <div className="register-text">
         <div className="text-wrapper">Register New Account</div>
       </div>
     </div>

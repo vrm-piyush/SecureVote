@@ -49,8 +49,8 @@ export const HomePage = () => {
           />
           <div id="head" className="head">
             <div id="quotes" className="quotes">
-              <div className="overlap-group">
-                <div className="text-wrapper-15">Vote Today</div>
+              <div className="head-group">
+                <div className="home-text">Vote Today</div>
                 <p className="p">Be a part of decision</p>
               </div>
             </div>
@@ -140,44 +140,44 @@ export const HomePage = () => {
         </div>
         <div id="about" className="about-data-wrapper">
           <div className="about-data">
-            <div className="overlap-4">
+            <div className="about-wrapper">
               <img
                 className="about-div"
                 alt="About div"
-                src="../../../public/assets/svg/Home/About_Div.svg"
+                src="/assets/svg/Home/About_Div.svg"
               />
-              <div className="about-2">
+              <div className="about-description">
                 <p className="about-desc-text">
                   Welcome to SecureVote, your ultimate solution for secure and
                   transparent electronic voting. Our platform ensures a seamless
                   and trustworthy voting experience, leveraging cutting-edge
                   technology to guarantee privacy, security, and integrity.
                 </p>
-                <div className="overlap-group-2">
+                <div className="about-label">
                   <div className="about-text">About</div>
                   <img
-                    className="img-3"
+                    className="about-icon"
                     alt="About"
                     src="/assets/svg/Home/about_icon.svg"
                   />
                 </div>
               </div>
             </div>
-            <div className="overlap-5">
+            <div className="mission-wrapper">
               <img
                 className="mission-div"
                 alt="Mission div"
                 src="/assets/svg/Home/About_Div.svg"
               />
               <div className="mission">
-                <div className="text-wrapper-17">Mission</div>
-                <p className="text-wrapper-18">
+                <div className="mission-label">Mission</div>
+                <p className="mission-desc-text">
                   At SecureVote, our mission is to revolutionize elections with
                   a secure and efficient voting system that fosters confidence
                   in the results.
                 </p>
                 <img
-                  className="img-3"
+                  className="mission-icon"
                   alt="Mission"
                   src="/assets/svg/Home/mission_icon.svg"
                 />
@@ -187,163 +187,149 @@ export const HomePage = () => {
         </div>
         <div id="why-secure-vote" className="why-secure-vote">
           <div className="why-data">
-            <div className="overlap-group-3">
-              <img
-                className="why-div"
-                alt="Why div"
-                src="/assets/svg/Home/features_line.svg"
-              />
-              <div className="why-heading">Why SecureVote?</div>
-              <div className="flexcontainer">
-                <p className="text">
-                  <span className="span">
-                    Security
-                    <br />
-                  </span>
-                </p>
-                <p className="text">
-                  <span className="text-wrapper-19">
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                  </span>
-                  <span className="text-wrapper-20">
-                    Advanced encryption and secure protocols protect voter data.
-                    <br />
-                  </span>
-                </p>
-                <p className="text">
-                  <span className="text-wrapper-19">
-                    <br />
-                  </span>
-                </p>
-                <p className="text">
-                  <span className="text-wrapper-21">
-                    Transparency
-                    <br />
-                  </span>
-                </p>
-                <p className="text">
-                  <span className="text-wrapper-19">
-                    &nbsp;&nbsp;&nbsp;&nbsp;{" "}
-                  </span>
-                  <span className="text-wrapper-22">
-                    Decentralized storage and real-time validation ensure
-                    accurate vote counting.
-                    <br />
-                  </span>
-                </p>
-                <p className="text">
-                  <span className="text-wrapper-19">
-                    <br />
-                  </span>
-                </p>
-                <p className="text">
-                  <span className="text-wrapper-23">
-                    User Experience
-                    <br />
-                  </span>
-                </p>
-                <p className="text">
-                  <span className="text-wrapper-24">
-                    &nbsp;&nbsp;&nbsp;&nbsp;{" "}
-                  </span>
-                  <span className="text-wrapper-22">
-                    Easy-to-use interface for voters and administrators.
-                    <br />
-                  </span>
-                </p>
-                <p className="text">
-                  <span className="text-wrapper-25">
-                    <br />
-                  </span>
-                </p>
-                <p className="text">
-                  <span className="span">Flexibility</span>
-                  <span className="text-wrapper-26">
-                    {" "}
-                    <br />
-                  </span>
-                </p>
-                <p className="text">
-                  <span className="text-wrapper-19">
-                    &nbsp;&nbsp;&nbsp;&nbsp;{" "}
-                  </span>
-                  <span className="text-wrapper-22">
-                    Scalable for small community votes or large national
-                    elections.
-                  </span>
-                </p>
-              </div>
+            <img
+              className="why-div"
+              alt="Why division"
+              src="/assets/svg/Home/features_line.svg"
+            />
+            <div className="why-heading">Why SecureVote?</div>
+            <div className="flexcontainer">
+              <p className="text">
+                <span className="label">
+                  Security
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="break">&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                <span className="why-desc">
+                  Advanced encryption and secure protocols protect voter data.
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="break">
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="label">
+                  Transparency
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="break">&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                <span className="why-desc">
+                  Decentralized storage and real-time validation ensure accurate
+                  vote counting.
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="break">
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="label">
+                  User Experience
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="break">&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                <span className="why-desc">
+                  Easy-to-use interface for voters and administrators.
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="break">
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="label">Flexibility</span>
+                <span className="break">
+                  {" "}
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="break">&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                <span className="why-desc">
+                  Scalable for small community votes or large national
+                  elections.
+                </span>
+              </p>
             </div>
           </div>
         </div>
-        <div id="easy-voting" className="easy-voting">
-          <div className="steps-wrapper">
-            <div className="steps-2">
-              <p className="steps-heading">
-                <span className="text-wrapper-27">
-                  {" "}
-                  Discover Easy Voting
-                  <br />
-                </span>
-                <span className="text-wrapper-28">
-                  <br />
-                </span>
-                <span className="text-wrapper-29">
-                  &nbsp;&nbsp;&nbsp;&nbsp; Follow these easy steps
-                </span>
-              </p>
-              <img
-                className="steps-div"
-                alt="steps div"
-                src="/assets/svg/Home/SeptsDiv.svg"
-              />
-              <div className="steps-data">
-                <div className="register-step">
+        <div id="easy-voting-steps" className="easy-voting-steps">
+          <div className="voting-steps">
+            <p className="steps-heading">
+              <span className="heading">
+                {" "}
+                Discover Easy Voting
+                <br />
+              </span>
+              <span className="break">
+                <br />
+              </span>
+              <span className="sub-heading">
+                &nbsp;&nbsp;&nbsp;&nbsp; Follow these easy steps
+              </span>
+            </p>
+            <img
+              className="steps-div"
+              alt="steps div"
+              src="/assets/svg/Home/SeptsDiv.svg"
+            />
+            <div className="steps-data">
+              <div className="register-step">
+                <img
+                  className="icon"
+                  alt="Register img"
+                  src="/assets/svg/Home/Register_step_Img.svg"
+                />
+                <p className="register-text">
+                  Register yourself by filling the required informations
+                </p>
+              </div>
+              <div className="login-step">
+                <img
+                  className="img-4"
+                  alt="Login img"
+                  src="/assets/svg/Home/Login_step_Img.svg"
+                />
+                <p className="login-text">Login as a Voter or Candidate</p>
+              </div>
+              <div className="candidate-card">
+                <div className="img-4">
                   <img
-                    className="img-3"
-                    alt="Register img"
-                    src="/assets/svg/Home/Register_step_Img.svg"
+                    className="vector"
+                    alt="Vector"
+                    src="/assets/svg/Home/Candidate_step_Img.svg"
                   />
-                  <p className="register-text">
-                    Register yourself by filling the required informations
-                  </p>
                 </div>
-                <div className="login-step">
-                  <img
-                    className="img-4"
-                    alt="Login img"
-                    src="/assets/svg/Home/Login_step_Img.svg"
-                  />
-                  <p className="login-text">Login as a Voter or Candidate</p>
-                </div>
-                <div className="candidate-card">
-                  <div className="img-4">
-                    <img
-                      className="vector"
-                      alt="Vector"
-                      src="/assets/svg/Home/Candidate_step_Img.svg"
-                    />
-                  </div>
-                  <div className="candidate-text">Go to Candidate card</div>
-                </div>
-                <div className="vote">
-                  <img
-                    className="vote-img"
-                    alt="Vote img"
-                    src="/assets/svg/Home/Vote_step_Img.svg"
-                  />
-                  <p className="vote-text">Vote your candidate and submit</p>
-                </div>
-                <div className="results-step">
-                  <img
-                    className="img-4"
-                    alt="Results img"
-                    src="/assets/svg/Home/Results_step_Img.svg"
-                  />
-                  <p className="results-text">
-                    View the results after election
-                  </p>
-                </div>
+                <div className="candidate-text">Go to Candidate card</div>
+              </div>
+              <div className="vote">
+                <img
+                  className="vote-img"
+                  alt="Vote img"
+                  src="/assets/svg/Home/Vote_step_Img.svg"
+                />
+                <p className="vote-text">Vote your candidate and submit</p>
+              </div>
+              <div className="results-step">
+                <img
+                  className="img-4"
+                  alt="Results img"
+                  src="/assets/svg/Home/Results_step_Img.svg"
+                />
+                <p className="results-text">View the results after election</p>
               </div>
             </div>
           </div>
@@ -527,12 +513,6 @@ export const HomePage = () => {
           />
         </div>
       </header>
-      {/* <img
-        className="back-to-top"
-        alt="Back to top"
-        src="/assets/svg/Home/Back_to_top.svg"
-        onClick={scrollToTop}
-      /> */}
       <div className="back-to-top" onClick={scrollToTop}>
         <svg
           width="49"
