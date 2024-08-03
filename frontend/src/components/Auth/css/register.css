@@ -48,11 +48,11 @@
 }
 
 .registration-page .copyright-instance {
-  height: 18px !important;
+  height: 1.125rem !important;
   left: 67px !important;
   position: absolute !important;
-  top: 3px !important;
-  width: 20px !important;
+  top: 0.188rem !important;
+  width: 1.25rem !important;
 }
 
 .registration-page .secure-vote {
@@ -113,16 +113,16 @@
 }
 
 .registration-page .line {
-  height: 2px;
+  height: 0.125rem;
   left: 723px;
   object-fit: cover;
   position: absolute;
-  top: 20px;
+  top: 1.25rem;
   width: 476px;
 }
 
 .registration-page .img {
-  height: 1px;
+  height: 0.063rem;
   left: 0;
   object-fit: cover;
   position: absolute;
@@ -172,14 +172,14 @@
 .registration-page .text-wrapper-13 {
   color: #ffffff;
   font-family: "Inter", Helvetica;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .registration-page .text-wrapper-14 {
   color: #ffffff;
   font-family: "Battambang", Helvetica;
-  font-size: 20px;
-  line-height: 39.8px;
+  font-size: 1.25rem;
+  line-height: 39.5rem;
 }
 
 .registration-page .registration-instance {
@@ -227,7 +227,7 @@
   height: 69px;
   left: 60px;
   position: absolute;
-  top: 40px;
+  top: 2.5rem;
   width: 1320px;
 }
 
@@ -238,10 +238,10 @@
 }
 
 .registration-page .back-btn-2 {
-  height: 1px !important;
+  height: 0.063rem !important;
   left: 0 !important;
   top: 16px !important;
-  width: 1px !important;
+  width: 0.063rem !important;
 }
 
 .registration-page .logo-2 {

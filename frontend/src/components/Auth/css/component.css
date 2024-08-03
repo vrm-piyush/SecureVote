@@ -1,0 +1,61 @@
+.back-btn {
+  all: unset;
+  box-sizing: border-box;
+  height: 38px;
+  position: relative;
+  max-width: 142px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.back-btn .back-arrow {
+  height: 30px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 17px;
+}
+
+.back-btn .text-wrapper {
+  font-family: "Kalam", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  height: 38px;
+  left: 33px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: -1px;
+  width: 54px;
+}
+
+.back-btn:hover .text-wrapper {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgb(153, 153, 153) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+.back-btn .default {
+  color: #ffffff;
+}
+
+.back-btn .on-click {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(153, 153, 153, 0.9) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}

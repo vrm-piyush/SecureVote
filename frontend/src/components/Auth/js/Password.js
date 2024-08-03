@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import "./loginPage.css";
+import "../css/loginPage.css";
 
 export const Password = ({
   property1,

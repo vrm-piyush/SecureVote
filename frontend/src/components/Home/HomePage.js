@@ -15,7 +15,7 @@ import { AboutLink } from "./js/AboutLink";
 import { StepsLink } from "./js/StepsLink";
 import { TwitterLink } from "./js/TwitterLink";
 import { FeedbackForm } from "./js/FeedbackForm";
-import { Copyright } from "../Auth/Copyright";
+import { Copyright } from "../Auth/js/Copyright";
 import "./css/home.css";
 import "./css/components.css";
 
@@ -287,7 +287,7 @@ export const HomePage = () => {
               src="/assets/svg/Home/SeptsDiv.svg"
             />
             <div className="steps-data">
-              <div className="register-step">
+              <div className="step register-step">
                 <img
                   className="icon"
                   alt="Register img"
@@ -297,7 +297,7 @@ export const HomePage = () => {
                   Register yourself by filling the required informations
                 </p>
               </div>
-              <div className="login-step">
+              <div className="step login-step">
                 <img
                   className="img-4"
                   alt="Login img"
@@ -305,7 +305,7 @@ export const HomePage = () => {
                 />
                 <p className="login-text">Login as a Voter or Candidate</p>
               </div>
-              <div className="candidate-card">
+              <div className="step candidate-card">
                 <div className="img-4">
                   <img
                     className="vector"
@@ -315,7 +315,7 @@ export const HomePage = () => {
                 </div>
                 <div className="candidate-text">Go to Candidate card</div>
               </div>
-              <div className="vote">
+              <div className="step vote">
                 <img
                   className="vote-img"
                   alt="Vote img"
@@ -323,7 +323,7 @@ export const HomePage = () => {
                 />
                 <p className="vote-text">Vote your candidate and submit</p>
               </div>
-              <div className="results-step">
+              <div className="step results-step">
                 <img
                   className="img-4"
                   alt="Results img"

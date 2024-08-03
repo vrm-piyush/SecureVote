@@ -1,28 +1,34 @@
 import React from "react";
-import { BackBtn } from "./BackBtn";
-import { LoginBtn } from "./LoginBtn";
-import { Password } from "./Password";
-import { RegisterBtn } from "./RegisterBtn";
-import { Copyright } from "./Copyright";
-import "./loginPage.css";
+import { BackBtn } from "./js/BackBtn";
+import { LoginBtn } from "./js/LoginBtn";
+import { Password } from "./js/Password";
+import { RegisterBtn } from "./js/RegisterBtn";
+import { Copyright } from "./js/Copyright";
+import "./css/loginPage.css";
 
 export const LoginPage = () => {
   return (
     <div className="login-page">
-      <div className="div-2">
-        <header className="header">
+      <div className="login">
+        <header id="header" className="header">
           <img
-            className="logo"
-            alt="Logo"
+            className="logo-img"
+            alt="SecureVote"
             src="/assets/svg/Login/logo-header.svg"
           />
           <BackBtn
-            arrow="/assets/svg/Login/back-arrow.svg"
+            arrow={[
+              "/assets/svg/Login/back-arrow.svg",
+              "/assets/svg/Login/back-arrow-hover.svg",
+              "/assets/svg/Login/back-arrow-onClick.svg",
+            ]}
             className="back-btn-instance"
+            divClassName="back-btn-instance-node"
             property1="default"
+            onClick={() => window.history.back()}
           />
         </header>
-        <div className="body">
+        <div id="login-body" className="login-body">
           <img
             className="login-logo"
             alt="Login logo"
