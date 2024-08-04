@@ -1,3 +1,4 @@
+/* loginPage.css */
 .login-page {
   background: linear-gradient(
     180deg,
@@ -30,6 +31,7 @@
   box-sizing: border-box;
 }
 
+/* Header */
 .login .header {
   background-color: transparent;
   height: 69px;
@@ -39,22 +41,30 @@
   width: 1250px;
 }
 
-.header .logo-img {
-  height: 77px;
-  left: 949px;
-  object-fit: cover;
+.header .logo-link {
   position: absolute;
   top: 0;
+  left: 949px;
+  height: 77px;
   width: 301px;
+  display: block;
+  text-decoration: none;
 }
 
-.login-page .back-btn-instance {
+.header .logo-link .header-logo-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.header .back-btn-instance {
   left: 0 !important;
   position: absolute !important;
   top: 16px !important;
 }
 
-.login-page .login-logo {
+/* Login Form */
+.login-page .login .login-logo {
   height: 411px;
   left: 60px;
   position: absolute;
@@ -62,25 +72,32 @@
   width: 633px;
 }
 
-.login-page .login-form {
+.login-body .login-form {
   height: 391px;
   left: 906px;
   position: absolute;
   top: 205px;
   width: 347px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-page .overlap {
+.login-body .login-form .login-form-frame {
   height: 391px;
   position: relative;
   width: 343px;
 }
 
-.login-page .rectangle-3 {
-  background-color: #015fc7;
+.layer2,
+.layer1 {
   border-radius: 0.625rem;
   box-shadow: inset 0px 0.375rem 0.25rem #0000001f,
     0px 0.25rem 0.25rem #00000040;
+}
+
+.login-form-frame .layer2 {
+  background-color: #015fc7;
   height: 372px;
   left: 14px;
   position: absolute;
@@ -88,11 +105,8 @@
   width: 329px;
 }
 
-.login-page .rectangle-4 {
+.login-form-frame .layer1 {
   background-color: #ffffff;
-  border-radius: 0.625rem;
-  box-shadow: inset 0.375rem 0px 0.25rem #0000001f,
-    0px 0.25rem 0.25rem #00000040;
   height: 372px;
   left: 0;
   position: absolute;
@@ -100,12 +114,13 @@
   width: 328px;
 }
 
-.login-page .login-heading {
+.login-form-frame .login-heading {
   color: #015fc7;
   font-family: "Laila", Helvetica;
   font-size: 36px;
   font-weight: 700;
   height: 56px;
+  width: 148px;
   left: 92px;
   letter-spacing: 0;
   line-height: normal;
@@ -113,10 +128,9 @@
   text-align: center;
   text-shadow: 0px 0.25rem 0.25rem #00000040;
   top: 1.25rem;
-  width: 148px;
 }
 
-.login-page .rectangle-5 {
+.login-form-frame .login-underline {
   background-color: #015fc7b2;
   box-shadow: 0px 0.25rem 0.25rem #00000040;
   height: 0.188rem;
@@ -126,47 +140,44 @@
   width: 140px;
 }
 
-.login-page .username {
-  height: 34px;
-  left: 42px;
+.login-form-frame .username {
   position: absolute;
   top: 96px;
+  left: 50%;
+  transform: translateX(-53%);
   width: 245px;
 }
 
-.login-page .overlap-group-2 {
+.username .username-input {
   background-color: #979797a3;
   border-radius: var(--shape-corner-small) var(--shape-corner-small) 0px 0px;
   height: 32px;
-  left: 0;
-  position: absolute;
-  top: 0;
   width: 243px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
 }
 
-.login-page .user-regular {
+.username-input .user-regular {
   height: 1.25rem;
-  left: 0.5rem;
-  position: absolute;
-  top: 0.625rem;
   width: 17px;
+  position: relative;
+  top: 0.225rem;
 }
 
-.login-page .overlap-group-2 .label {
-  color: #515056;
+.username-input .username-input-field {
+  color: #979797a3;
   font-family: "Inter", Helvetica;
   font-size: 12px;
   font-weight: 600;
-  left: -25px;
-  letter-spacing: 0;
-  line-height: normal;
+  margin-left: 0.5rem;
+  flex: 1;
   opacity: 0.5;
-  position: absolute;
-  top: 0.563rem;
-  width: 180px;
+  line-height: normal;
+  text-align: left;
 }
 
-.login-page .rectangle-6 {
+.username .username-input-border {
   background-color: #015fc7b2;
   height: 0.125rem;
   left: 0;
@@ -175,23 +186,19 @@
   width: 243px;
 }
 
-.login-page .password-wrapper {
-  height: 33px;
-  left: 2.5rem;
+.login-form-frame .password-wrapper {
   position: absolute;
   top: 153px;
+  left: 50%;
+  transform: translateX(-53%);
   width: 243px;
 }
 
-.login-page .password-instance {
-  width: unset !important;
+.password-wrapper .password-instance {
+  width: 100%;
 }
 
-.login-page .design-component-instance-node {
-  width: 243px !important;
-}
-
-.login-page .forgot-password {
+.login-form-frame .forgot-password {
   color: #9a99a1;
   font-family: "Inter", Helvetica;
   font-size: 0.781rem;
@@ -200,267 +207,211 @@
   left: 27px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
+  position: relative;
   text-shadow: 0px 0.25rem 0.25rem #00000040;
   top: 258px;
   width: 141px;
+  cursor: pointer;
 }
 
-.login-page .register-btn-instance {
-  left: 48px !important;
-  position: absolute !important;
-  top: 300px !important;
-}
-
-.login-page .design-component-instance-node-2 {
-  text-shadow: 0px 0.25rem 0.25rem #00000040 !important;
-}
-
-.login-page .login-btn-instance {
-  border-radius: 0.438rem !important;
+.login-form-frame .login-btn-instance {
+  border-radius: 7px !important;
   left: 42px !important;
   position: absolute !important;
   top: 213px !important;
 }
 
-.login-page .footer {
-  height: 135px;
-  left: 116px;
+.login-form-frame .login-btn {
+  font-size: 16px !important;
+  text-shadow: 0px 4px 4px #00000040 !important;
+}
+
+.login-form-frame .or {
+  height: 24px;
+  left: 42px;
   position: absolute;
-  top: 774px;
-  width: 1207px;
+  top: 288px;
+  width: 245px;
 }
 
-.footer .image {
-  height: 27px;
-  width: 125px;
-}
-
-.footer-logo .image .logo {
-  height: 27px;
-  left: 550px;
-  object-fit: cover;
+.or .or-section {
+  height: 24px;
   position: relative;
-  top: 2.5rem;
-  width: 125px;
-}
-
-.socialmedia .line-left {
-  height: 0.188rem;
-  right: 50px;
-  object-fit: cover;
-  position: relative;
-  top: -0.313rem;
-  width: 476px;
-}
-
-.instagram {
-  height: 46px;
-  left: 25px;
-  position: relative;
-  top: 15px;
-  width: 49px;
-  box-shadow: 0.25rem #00000040;
-}
-
-.facebook {
-  height: 37px;
-  left: 0.625rem;
-  position: relative;
-  top: 0.5rem;
-  width: 41px;
-}
-
-.twitter {
-  height: 45px;
-  right: 0.313rem;
-  position: relative;
-  top: 15px;
-  width: 50px;
-}
-
-.socialmedia .line-right {
-  height: 0.188rem;
-  left: 65px;
-  object-fit: cover;
-  position: relative;
-  top: -0.313rem;
-  width: 476px;
-}
-
-.register-btn {
-  border-radius: 0.125rem;
-  height: 33px;
   width: 243px;
 }
 
-.register-btn .overlap-group {
-  -webkit-backdrop-filter: blur(0.25rem) brightness(100%);
-  backdrop-filter: blur(0.25rem) brightness(100%);
-  background-color: #dedada;
-  border: 0.063rem solid;
-  border-color: #bfbfbf;
-  border-radius: 0.625rem;
-  box-shadow: 0px 0.25rem 0.25rem #00000040;
-  height: 35px;
-  left: -0.375rem;
-  position: relative;
-  top: -0.063rem;
-  width: 243px;
+.or-section .or-div-left {
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 106px;
 }
 
-.register-btn .text-wrapper {
-  color: #3f3d56;
+.or-section .or-text {
+  color: #b4b4b4;
   font-family: "Grenze", Helvetica;
   font-size: 16px;
   font-weight: 700;
   height: 24px;
-  left: 23px;
+  left: 98px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 0.313rem;
-  width: 186px;
-}
-.register-btn:hover .overlap-group {
-  background-color: #ccc9c9;
-  border-color: #afafaf;
-}
-
-.password {
-  height: 33px;
-  width: 243px;
-}
-
-.password .overlap-group {
-  height: 33px;
-  position: relative;
-}
-
-.password .rectangle {
-  height: 31px;
-  left: 0.125rem;
-  position: absolute;
+  text-shadow: 0 4px 4px #00000040;
   top: 0;
-  width: 243px;
+  width: 47px;
 }
 
-.password .vector {
-  height: 22px;
-  left: 0.5rem;
+.or-section .or-div-right {
+  height: 1px;
+  left: 137px;
+  object-fit: cover;
   position: absolute;
-  top: 0.563rem;
-  width: 1.25rem;
+  top: 13px;
+  width: 106px;
 }
 
-.password .PASSWORD {
-  font-family: "Inter", Helvetica;
-  font-size: 12px;
-  font-weight: 600;
-  left: -1.25rem;
-  letter-spacing: 0;
-  line-height: normal;
-  opacity: 0.5;
-  position: relative;
-  top: 0.5rem;
-  width: 178px;
-}
-
-.password .div {
-  background-color: #015fc7b2;
-  height: 0.125rem;
-  left: 0.125rem;
+.login-form-frame .register-link {
+  height: 21px;
+  left: 76px;
   position: absolute;
-  top: 31px;
-  width: 243px;
+  top: 327px;
+  width: 172px;
 }
 
-.password .hide-eye {
-  left: 216px;
-  position: absolute;
-  width: 1.25rem;
-}
-
-.password .default {
-  color: #515056;
-}
-
-.password .hide-password {
-  color: #504f56;
-}
-
-.password .property-1-default {
-  height: 1.25rem;
-  top: 0.438rem;
-}
-
-.password .property-1-hide-password {
-  height: 12px;
-  top: 11px;
-}
-
-.login-btn {
-  all: unset;
-  background-color: #015fc7;
-  border-radius: 0.313rem;
-  box-shadow: 0px 0.25rem 0.25rem #00000040;
-  box-sizing: border-box;
-  height: 36px;
-  position: relative;
-  width: 243px;
-}
-
-.login-btn .text-wrapper {
-  all: unset;
-  box-sizing: border-box;
-  color: #ffffff;
-  font-family: "Philosopher", Helvetica;
-  font-size: 1.125rem;
+.register-link .register-text {
+  color: #262626;
+  font-family: "Grenze", Helvetica;
+  font-size: 13px;
   font-weight: 700;
-  height: 25px;
-  left: 65px;
+  height: 19px;
+  left: 0;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
+  top: 2px;
+}
+
+.register-link .register-here-instance {
+  left: 98px !important;
+  position: absolute !important;
+  top: 0 !important;
+}
+
+/* Footer */
+.login-page .footer {
+  height: 135px;
+  position: absolute;
+  top: 774px;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 0px;
+}
+
+.footer .social-media img {
+  margin: 0 10px;
+  box-shadow: 0.25rem #00000040;
+}
+
+.footer .left-div,
+.footer .right-div {
+  height: 0.25rem;
+  width: 476px;
+  object-fit: cover;
+  top: 27px;
+}
+
+.footer .left-div {
+  position: absolute;
+  right: 875px;
+}
+
+.footer .right-div {
+  height: 0.288rem;
+  position: absolute;
+  left: 875px;
+}
+
+.footer .social-media img.instagram-logo {
+  height: 46px;
+  position: relative;
+  top: 25px;
+  width: 49px;
+}
+
+.footer .social-media img.facebook-logo {
+  height: 37px;
+  position: relative;
+  top: 20px;
+  width: 41px;
+}
+
+.footer .social-media img.twitter-logo {
+  height: 45px;
+  position: relative;
+  top: 23px;
+  width: 50px;
+}
+
+.footer .footer-logo {
   text-align: center;
-  top: 0.375rem;
-  width: 105px;
 }
 
-.login-btn:hover {
-  background-color: #004693;
+.footer .footer-logo .logo-image {
+  height: 27px;
+  width: 125px;
+  cursor: pointer;
 }
 
-.label {
-  height: 23px;
+.footer-logo .logo-image .footer-logo-img {
+  object-fit: cover;
+  position: relative;
+  top: 2.7rem;
 }
 
-.label .text-wrapper {
+.footer .Copyright-footer {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  flex-direction: column;
   color: #ffffffb2;
   font-family: "Crimson Text", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  height: 23px;
-  left: 451px;
-  letter-spacing: 0;
-  line-height: 25px;
-  position: relative;
-  text-align: center;
-  top: 48.313rem;
-  white-space: nowrap;
-  width: 64px;
 }
 
-.Copyright-footer .copyright {
+.Copyright-footer .label .copyright-text-wrapper {
+  font-size: 16px;
+  font-weight: 400;
+  height: 20px;
+  width: 64px;
+  position: relative;
+  top: 3.513rem;
+  right: 130px;
+  margin: 5px 0;
+}
+
+.Copyright-footer .copyright-icon {
   height: 1.25rem;
   position: relative;
   width: 1.25rem;
-  top: 26px;
-  left: -75px;
+  top: 28px;
+  left: -85px;
 }
 
-.Copyright-footer .copyright .vector {
+.Copyright-footer .copyright-icon .vector {
   height: 16px;
   left: 0.125rem;
   position: absolute;
@@ -468,20 +419,17 @@
   width: 16px;
 }
 
-.label-1 .secure-vote {
-  color: #ffffffb2;
-  font-family: "Crimson Text", Helvetica;
+.Copyright-footer .label-1 .secure-vote {
   font-size: 16px;
   font-weight: 400;
-  height: 23px;
-  left: 541px;
-  letter-spacing: 0;
-  line-height: 25px;
+  height: 20px;
+  width: 237px;
   position: relative;
   text-align: center;
-  top: 0.25rem;
+  top: 0.35rem;
+  left: 45px;
   white-space: nowrap;
-  width: 237px;
+  margin: 5px 0;
 }
 
 @media (max-width: 768px) {
@@ -497,5 +445,40 @@
 
   .back-btn .back-arrow {
     height: 25px; /* Adjust arrow size for smaller screens */
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .footer .socialmedia {
+    flex-direction: column;
+  }
+
+  .footer .socialmedia img {
+    margin: 5px 0;
+  }
+
+  .footer .footer-logo .logo-image {
+    height: 20px;
+    width: 100px;
+  }
+
+  .footer .Copyright-footer {
+    font-size: 14px;
+  }
+
+  .footer .Copyright-footer .copyright-text-wrapper,
+  .footer .Copyright-footer .secure-vote {
+    font-size: 14px;
+  }
+
+  .footer .Copyright-footer .copyright-icon {
+    height: 16px;
+    width: 16px;
   }
 }

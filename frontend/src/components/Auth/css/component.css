@@ -59,3 +59,115 @@
   background-clip: text;
   color: transparent;
 }
+
+/* Password */
+.password-box .password-input {
+  background-color: #979797a3;
+  border-radius: var(--shape-corner-small) var(--shape-corner-small) 0px 0px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  position: relative;
+}
+
+/* Icon Styles */
+.password-input .key,
+.password-input .eye {
+  height: 22px;
+  width: 1.25rem;
+}
+
+.password-input .key {
+  margin-right: 0.5rem;
+  margin-top: 8px;
+}
+
+.password-input .eye {
+  margin-left: auto;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.password-input .password {
+  font-family: "Inter", Helvetica;
+  font-size: 12px;
+  font-weight: 600;
+  color: #504f56;
+  opacity: 0.5;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+  top: 12px;
+}
+
+.password-input .password-input-border {
+  background-color: #015fc7b2;
+  height: 0.125rem;
+  position: absolute;
+  top: 32px;
+  width: 100%;
+  right: 0;
+}
+
+/* Login Button */
+.login-btn {
+  all: unset;
+  background-color: #015fc7;
+  border-radius: 0.313rem;
+  box-shadow: 0px 0.25rem 0.25rem #00000040;
+  box-sizing: border-box;
+  height: 36px;
+  width: 243px;
+  top: 195px;
+  position: relative;
+  left: -7px;
+  cursor: pointer;
+}
+
+.login-btn .text-wrapper {
+  all: unset;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-family: "Philosopher", Helvetica;
+  font-size: 1.125rem;
+  font-weight: 700;
+  height: 25px;
+  left: 65px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0.375rem;
+  width: 105px;
+}
+
+.login-btn:hover {
+  background-color: #004693;
+}
+
+/* Register Here */
+.register-here {
+  height: 21px;
+  position: relative;
+  width: 80px;
+  cursor: pointer;
+}
+
+.register-here .text-wrapper {
+  color: #0157cf;
+  font-family: "Grenze", Helvetica;
+  font-size: 14px;
+  font-weight: 700;
+  height: 21px;
+  left: 5px;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  position: absolute;
+  text-decoration: underline;
+  top: 2px;
+}
+
+.register-here:hover .text-wrapper {
+  color: #014eba;
+}

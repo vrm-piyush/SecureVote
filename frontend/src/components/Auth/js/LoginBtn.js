@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import "../css/loginPage.css";
+import "../css/component.css";
 
 export const LoginBtn = ({ onClick = false, className }) => {
   return (
