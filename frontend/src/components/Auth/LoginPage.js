@@ -55,10 +55,10 @@ export const LoginPage = () => {
               <div className="layer1" />
               <div className="login-heading">LOGIN</div>
               <div className="login-underline" />
-              <div className="username">
+              <div className="input-wrapper">
                 <div className="username-input">
                   <img
-                    className="user-regular"
+                    className="user-icon"
                     alt="User regular"
                     src="/assets/images/user.png"
                   />
@@ -72,7 +72,7 @@ export const LoginPage = () => {
                 </div>
                 <div className="username-input-border" />
               </div>
-              <div className="password-wrapper">
+              <div className="input-wrapper">
                 <Password
                   className="password-instance"
                   hideEye="/assets/svg/Login/hide-eye.svg"

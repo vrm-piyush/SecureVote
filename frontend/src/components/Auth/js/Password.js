@@ -13,29 +13,27 @@ export const Password = ({
   eye = "/assets/svg/Login/eye.svg",
 }) => {
   return (
-    <div className={`password-box ${className}`}>
-      <div className="password-input">
-        <img
-          className="key"
-          alt="Key"
-          src={isHidden ? vector : "/assets/svg/Login/key.svg"}
-        />
-        <input
-          className={`password ${isHidden ? "hidden-password" : "password"}`}
-          type={isHidden ? "password" : "text"}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="PASSWORD"
-        />
+    <div className={`password-input ${className}`}>
+      <img
+        className="key"
+        alt="Key"
+        src={isHidden ? vector : "/assets/svg/Login/key.svg"}
+      />
+      <input
+        className={`password ${isHidden ? "hidden-password" : "password"}`}
+        type={isHidden ? "password" : "text"}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="PASSWORD"
+      />
 
-        <img
-          className="eye"
-          alt="Eye"
-          src={isHidden ? hideEye : eye}
-          onClick={toggleVisibility}
-        />
-        <div className="password-input-border" />
-      </div>
+      <img
+        className="eye"
+        alt="Eye"
+        src={isHidden ? hideEye : eye}
+        onClick={toggleVisibility}
+      />
+      <div className="password-input-border" />
     </div>
   );
 };

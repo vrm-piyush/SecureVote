@@ -140,44 +140,58 @@
   width: 140px;
 }
 
-.login-form-frame .username {
-  position: absolute;
+.login-form-frame .input-wrapper {
+  position: relative;
   top: 96px;
   left: 50%;
   transform: translateX(-53%);
   width: 245px;
+  z-index: 9;
 }
 
-.username .username-input {
+.username-input,
+.password-instance {
   background-color: #979797a3;
   border-radius: var(--shape-corner-small) var(--shape-corner-small) 0px 0px;
-  height: 32px;
+  height: 33px;
   width: 243px;
   display: flex;
   align-items: center;
   padding: 0 0.5rem;
+  position: relative;
+  z-index: 10;
 }
 
-.username-input .user-regular {
+.user-input-wrapper .username-input {
+  top: 96px;
+  left: 50%;
+  transform: translateX(-53.5%);
+}
+
+.username-input .user-icon {
   height: 1.25rem;
   width: 17px;
   position: relative;
   top: 0.225rem;
 }
 
-.username-input .username-input-field {
-  color: #979797a3;
+.username-input .username-input-field,
+.password-input .password {
   font-family: "Inter", Helvetica;
   font-size: 12px;
   font-weight: 600;
-  margin-left: 0.5rem;
+  color: #504f56;
+  margin: 0;
   flex: 1;
   opacity: 0.5;
   line-height: normal;
   text-align: left;
+  border: none;
+  background: none;
+  z-index: 11;
 }
 
-.username .username-input-border {
+.input-wrapper .username-input-border {
   background-color: #015fc7b2;
   height: 0.125rem;
   left: 0;
@@ -186,16 +200,9 @@
   width: 243px;
 }
 
-.login-form-frame .password-wrapper {
-  position: absolute;
-  top: 153px;
-  left: 50%;
-  transform: translateX(-53%);
-  width: 243px;
-}
-
-.password-wrapper .password-instance {
-  width: 100%;
+.username-input .password-instance {
+  height: 32px;
+  margin-top: 0px;
 }
 
 .login-form-frame .forgot-password {
@@ -332,7 +339,7 @@
   height: 0.25rem;
   width: 476px;
   object-fit: cover;
-  top: 27px;
+  top: 32px;
 }
 
 .footer .left-div {
@@ -349,21 +356,21 @@
 .footer .social-media img.instagram-logo {
   height: 46px;
   position: relative;
-  top: 25px;
+  top: 30px;
   width: 49px;
 }
 
 .footer .social-media img.facebook-logo {
-  height: 37px;
+  height: 36px;
   position: relative;
-  top: 20px;
+  top: 26px;
   width: 41px;
 }
 
 .footer .social-media img.twitter-logo {
   height: 45px;
   position: relative;
-  top: 23px;
+  top: 28px;
   width: 50px;
 }
 
