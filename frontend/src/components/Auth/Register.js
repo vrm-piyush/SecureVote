@@ -1,10 +1,10 @@
 import React from "react";
-import { BackBtn } from "./BackBtn";
-import { Copyright } from "./Copyright";
-import { Registration } from "./Registration";
-import "./register.css";
+import { BackBtn } from "../Auth/js/BackBtn";
+import { Copyright } from "../Auth/js/Copyright";
+// import { Registration } from "../Auth/js/Registration";
+import "../Auth/css/register.css";
 
-export const RegistrationPage = () => {
+const RegistrationPage = () => {
   return (
     <div className="registration-page">
       <div className="overlap-wrapper">
@@ -55,7 +55,7 @@ export const RegistrationPage = () => {
               </p>
             </div>
           </div>
-          <Registration
+          {/* <Registration
             className="registration-instance"
             divClassName="registration-5"
             formClassName="registration-2"
@@ -63,7 +63,7 @@ export const RegistrationPage = () => {
             overlapGroupClassName="registration-3"
             property1="voter"
             toggleSwitchStateOffClassName="registration-4"
-          />
+          /> */}
           <img className="figure" alt="Figure" src="figure.png" />
           <header className="header">
             <BackBtn
@@ -79,3 +79,5 @@ export const RegistrationPage = () => {
     </div>
   );
 };
+
+export default RegistrationPage;

@@ -99,34 +99,27 @@
 
 /* Login Button */
 .login-btn {
-  all: unset;
   background-color: #015fc7;
   border-radius: 0.313rem;
   box-shadow: 0px 0.25rem 0.25rem #00000040;
   box-sizing: border-box;
   height: 36px;
   width: 243px;
-  top: 195px;
   position: relative;
-  left: -7px;
   cursor: pointer;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-btn .text-wrapper {
-  all: unset;
-  box-sizing: border-box;
   color: #ffffff;
-  font-family: "Philosopher", Helvetica;
+  font-family: "Philosopher", Helvetica, sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
-  height: 25px;
-  left: 65px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
   text-align: center;
-  top: 0.375rem;
-  width: 105px;
 }
 
 .login-btn:hover {
@@ -135,9 +128,7 @@
 
 /* Register Here */
 .register-here {
-  height: 21px;
   position: relative;
-  width: 80px;
   cursor: pointer;
 }
 
@@ -146,13 +137,9 @@
   font-family: "Grenze", Helvetica;
   font-size: 14px;
   font-weight: 700;
-  height: 21px;
-  left: 5px;
   letter-spacing: 0.25px;
-  line-height: normal;
-  position: absolute;
   text-decoration: underline;
-  top: 2px;
+  transition: color 0.3s ease;
 }
 
 .register-here:hover .text-wrapper {

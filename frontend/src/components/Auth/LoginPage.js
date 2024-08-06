@@ -60,7 +60,7 @@ export const LoginPage = () => {
                   <img
                     className="user-icon"
                     alt="User regular"
-                    src="/assets/images/user.png"
+                    src="/assets/svg/Login/user-icon.svg"
                   />
                   <input
                     className="username-input-field"

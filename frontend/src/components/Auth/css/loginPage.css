@@ -283,10 +283,10 @@
 
 .login-form-frame .register-link {
   height: 21px;
-  left: 76px;
+  left: 45%;
+  transform: translateX(-80%);
   position: absolute;
   top: 327px;
-  width: 172px;
 }
 
 .register-link .register-text {
@@ -294,18 +294,16 @@
   font-family: "Grenze", Helvetica;
   font-size: 13px;
   font-weight: 700;
-  height: 19px;
-  left: 0;
-  letter-spacing: 0;
   line-height: normal;
-  position: absolute;
-  top: 2px;
+  margin-right: 8px;
+  width: auto;
 }
 
 .register-link .register-here-instance {
   left: 98px !important;
   position: absolute !important;
   top: 0 !important;
+  width: 80px;
 }
 
 /* Footer */
@@ -487,5 +485,101 @@
   .footer .Copyright-footer .copyright-icon {
     height: 16px;
     width: 16px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .login-page .login {
+    padding: 1rem;
+    height: auto; /* Adjust based on content */
+  }
+
+  .header .logo-link {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .login-page .login .login-logo {
+    width: 80%; /* Adjust width for tablets */
+    left: 10%;
+  }
+
+  .login-body .login-form {
+    width: 80%;
+    left: 10%;
+  }
+
+  .login-form-frame {
+    width: 100%;
+  }
+
+  .login-form-frame .login-heading {
+    font-size: 28px;
+    width: auto;
+  }
+
+  .login-form-frame .input-wrapper {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .login-page .login {
+    max-width: 1440px;
+    padding: 3rem;
+  }
+
+  .header .logo-link {
+    left: auto;
+    right: 20px;
+  }
+
+  .login-page .login .login-logo {
+    width: 50%;
+  }
+
+  .login-body .login-form {
+    width: 30%;
+  }
+
+  .login-form-frame {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 0.5rem;
+  }
+
+  .login-page .login {
+    padding: 1rem;
+    height: auto; /* Adjust based on content */
+  }
+
+  .header .logo-link {
+    width: 100px;
+  }
+
+  .login-page .login .login-logo {
+    width: 90%;
+    left: 5%;
+  }
+
+  .login-body .login-form {
+    width: 90%;
+    left: 5%;
+  }
+
+  .login-form-frame {
+    width: 100%;
+  }
+
+  .login-form-frame .login-heading {
+    font-size: 24px;
+  }
+
+  .login-form-frame .input-wrapper {
+    width: 100%;
   }
 }
