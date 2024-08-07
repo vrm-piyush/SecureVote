@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 //import { getAuth } from "supertokens-auth-react";
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import HomePage from "./components/Home/HomePage";
-import LoginPage from "./components/Auth/LoginPage";
+// import LoginPage from "./components/Auth/LoginPage";
 import RegistrationPage from "./components/Auth/Register";
 import "./App.css";
 
