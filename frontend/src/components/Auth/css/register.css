@@ -1,149 +1,89 @@
 /* Registration Form */
 .registration-page {
+  background: linear-gradient(
+    180deg,
+    rgb(73, 99, 130) 0%,
+    rgb(44.36, 60.16, 79) 50%,
+    rgb(15.72, 21.32, 28) 100%
+  );
   background-color: rgba(255, 255, 255, 1);
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
   width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
-.registration-page .overlap {
-  background: linear-gradient(
-    180deg,
-    rgb(36.25, 48.3, 62.67) 0%,
-    rgb(65.74, 87.61, 113.67) 50%,
-    rgb(95.24, 126.91, 164.67) 100%
-  );
-  background-color: rgba(255, 255, 255, 1);
-  height: 1024px;
-  width: 100%;
-}
-
-.registration-page .overlap {
-  background: linear-gradient(180deg, rgb(73, 99, 130) 0%, rgb(44.36, 60.16, 79) 50%, rgb(15.72, 21.32, 28) 100%);
+.registration-page .registration-overlap {
   height: 1716px;
   position: relative;
+  max-width: 1440px;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-.registration-page .footer {
+/* Header */
+.registration-overlap .header {
   background-color: transparent;
-  height: 129px;
-  left: 120px;
+  height: 69px;
+  left: 6.036rem;
   position: absolute;
-  top: 1557px;
-  width: 1199px;
+  top: 2.5rem;
+  width: 1250px;
 }
 
-.registration-page .copyright-2 {
-  height: 23px;
-  left: 438px;
+.header .logo-link {
   position: absolute;
-  top: 106px;
-  width: 331px;
+  top: 0;
+  left: 949px;
+  height: 77px;
+  width: 301px;
+  display: block;
+  text-decoration: none;
 }
 
-.registration-page .copyright-instance {
-  height: 18px !important;
-  left: 67px !important;
+.logo-link .header-logo-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.header .back-btn-instance {
+  left: 0 !important;
   position: absolute !important;
-  top: 3px !important;
-  width: 20px !important;
+  top: 16px !important;
 }
 
-.registration-page .secure-vote {
-  color: #ffffffb2;
-  font-family: "Crimson Text-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  height: 23px;
-  left: 90px;
-  letter-spacing: 0;
-  line-height: 25px;
+/* Registration Body */
+.registration-page .register-logo {
+  height: 562px;
+  left: 152px;
   position: absolute;
-  text-align: center;
-  top: 0;
-  white-space: nowrap;
-  width: 237px;
+  top: 170px;
+  width: 322px;
 }
 
-.registration-page .text-wrapper-3 {
-  color: #ffffffb2;
-  font-family: "Crimson Text-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  height: 23px;
-  left: 0;
-  letter-spacing: 0;
-  line-height: 25px;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  white-space: nowrap;
-  width: 64px;
-}
-
-.registration-page .logo {
-  height: 27px;
-  left: 537px;
-  object-fit: cover;
-  position: absolute;
-  top: 68px;
-  width: 125px;
-}
-
-.registration-page .group {
-  height: 39px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 1199px;
-}
-
-.registration-page .social-media {
-  height: 39px;
-  left: 520px;
-  position: absolute;
-  top: 0;
-  width: 158px;
-}
-
-.registration-page .line {
-  height: 2px;
-  left: 723px;
-  object-fit: cover;
-  position: absolute;
-  top: 20px;
-  width: 476px;
-}
-
-.registration-page .img {
-  height: 1px;
-  left: 0;
-  object-fit: cover;
-  position: absolute;
-  top: 21px;
-  width: 470px;
-}
-
-.registration-page .guidelines {
+.register-body .guidelines {
   height: 529px;
   left: 120px;
   position: absolute;
   top: 842px;
   width: 539px;
-}
-
-.registration-page .overlap-group {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
   border-radius: 15px;
-  height: 529px;
-  position: relative;
-  width: 537px;
 }
 
-.registration-page .guidelines-for-voter {
+.guidelines .guidelines-for-voter {
   color: transparent;
-  font-family: "Gentium Book Basic-Bold", Helvetica;
+  font-family: "Gentium Book Plus", Helvetica;
   font-size: 30px;
   font-weight: 400;
   height: 460px;
@@ -155,411 +95,160 @@
   width: 468px;
 }
 
-.registration-page .span {
+.guidelines-for-voter .guidelines-heading {
   color: #cdf006;
   font-weight: 700;
+  align-items: left;
 }
 
-.registration-page .text-wrapper-4 {
+.guidelines-for-voter .break {
   color: #ffffff;
-  font-family: "Inter-Regular", Helvetica;
+  font-family: "Inter", Helvetica;
   font-size: 20px;
 }
 
-.registration-page .text-wrapper-5 {
+.guidelines-for-voter .guidelines-list {
   color: #ffffff;
-  font-family: "Battambang-Regular", Helvetica;
+  font-family: "Battambang", Helvetica;
   font-size: 20px;
-  line-height: 39.8px;
+  line-height: 2;
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 0;
 }
 
-.registration-page .registration {
-  /* background-image: url(./registration-frame.svg); */
-  background-size: 100% 100%;
-  height: 1043px;
-  left: 721px;
+.guidelines-for-voter .guidelines-list li {
+  margin-bottom: 15px;
+}
+
+/* Footer */
+.registration-page .footer {
+  height: 135px;
   position: absolute;
-  top: 170px;
-  width: 500px;
+  top: 1540px;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.registration-page .overlap-2 {
-  height: 896px;
-  left: 39px;
-  position: absolute;
-  top: 36px;
-  width: 424px;
+.footer .social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 0px;
+  cursor: pointer;
 }
 
-.registration-page .form {
-  height: 896px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 424px;
+.footer .social-media img {
+  margin: 0 10px;
+  box-shadow: 0.25rem #00000040;
 }
 
-.registration-page .text-wrapper-6 {
-  color: #ffffff;
-  font-family: "Laila-Bold", Helvetica;
-  font-size: 45px;
-  font-weight: 700;
-  height: 70px;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  width: 422px;
-}
-
-.registration-page .registration-form {
-  height: 752px;
-  left: 61px;
-  position: absolute;
-  top: 144px;
-  width: 301px;
-}
-
-.registration-page .name {
-  height: 69px;
-  left: 1px;
-  position: absolute;
-  top: 0;
-  width: 302px;
-}
-
-.registration-page .div-2 {
-  background-color: #ffffff;
-  border-radius: 7px;
-  box-shadow: inset 0px 4px 4px #00000040;
-  height: 40px;
-  left: 0;
-  position: absolute;
-  top: 29px;
-  width: 300px;
-}
-
-.registration-page .text-wrapper-7 {
-  color: #ffffff;
-  font-family: "Outfit-Regular", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 0;
-  width: 56px;
-}
-
-.registration-page .DOB {
-  height: 69px;
-  left: 1px;
-  position: absolute;
-  top: 254px;
-  width: 302px;
-}
-
-.registration-page .text-wrapper-8 {
-  color: #ffffff;
-  font-family: "Outfit-Regular", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 0;
-  width: 115px;
-}
-
-.registration-page .father-mother {
-  height: 69px;
-  left: 1px;
-  position: absolute;
-  top: 85px;
-  width: 302px;
-}
-
-.registration-page .text-wrapper-9 {
-  color: #ffffff;
-  font-family: "Outfit-Regular", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 0;
-  width: 222px;
-}
-
-.registration-page .email {
-  height: 69px;
-  left: 1px;
-  position: absolute;
-  top: 169px;
-  width: 302px;
-}
-
-.registration-page .text-wrapper-10 {
-  color: #ffffff;
-  font-family: "Outfit-Regular", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 0;
-  width: 46px;
-}
-
-.registration-page .mobile {
-  height: 69px;
-  left: 1px;
-  position: absolute;
-  top: 339px;
-  width: 302px;
-}
-
-.registration-page .text-wrapper-11 {
-  color: #ffffff;
-  font-family: "Outfit-Regular", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 0;
-  width: 92px;
-}
-
-.registration-page .password {
-  height: 69px;
-  left: 0;
-  position: absolute;
-  top: 508px;
-  width: 302px;
-}
-
-.registration-page .password-frame {
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: inset 0px 4px 4px #00000040;
-  height: 40px;
-  left: 0;
-  position: absolute;
-  top: 29px;
-  width: 300px;
-}
-
-.registration-page .text-wrapper-12 {
-  color: #ffffff;
-  font-family: "Outfit-Regular", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 0;
-  width: 82px;
-}
-
-.registration-page .re-password {
-  height: 69px;
-  left: 1px;
-  position: absolute;
-  top: 593px;
-  width: 302px;
-}
-
-.registration-page .text-wrapper-13 {
-  color: #ffffff;
-  font-family: "Outfit-Regular", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 0;
-  width: 166px;
-}
-
-.registration-page .submit-wrapper {
-  /* background-image: url(./mask-group.png); */
-  background-size: 100% 100%;
-  height: 69px;
-  left: 0;
-  position: absolute;
-  top: 683px;
-  width: 300px;
-}
-
-.registration-page .submit-instance {
-  height: 42px !important;
-  left: 57px !important;
-  top: 14px !important;
-}
-
-.registration-page .aadhar {
-  height: 69px;
-  left: 0;
-  position: absolute;
-  top: 424px;
-  width: 302px;
-}
-
-.registration-page .text-wrapper-14 {
-  color: #ffffff;
-  font-family: "Outfit-Regular", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 0;
-  width: 289px;
-}
-
-.registration-page .toggle-switch {
-  height: 32px;
-  left: 62px;
-  position: absolute;
-  top: 89px;
-  width: 64px;
-}
-
-.registration-page .text-wrapper-15 {
-  color: #ffffff;
-  font-family: "Petrona-ExtraBold", Helvetica;
-  font-size: 25px;
-  font-weight: 800;
-  height: 32px;
-  left: 142px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 88px;
-  width: 73px;
-}
-
-.registration-page .or {
-  height: 24px;
-  left: 101px;
-  position: absolute;
-  top: 947px;
-  width: 302px;
-}
-
-.registration-page .or-div-left {
-  height: 1px;
-  left: 0;
+.footer .left-div,
+.footer .right-div {
+  height: 0.25rem;
+  width: 476px;
   object-fit: cover;
-  position: absolute;
-  top: 13px;
-  width: 122px;
+  top: 32px;
 }
 
-.registration-page .text-wrapper-16 {
-  color: #b4b4b4;
-  font-family: "Grenze-Bold", Helvetica;
+.footer .left-div {
+  position: absolute;
+  right: 875px;
+}
+
+.footer .right-div {
+  height: 0.288rem;
+  position: absolute;
+  left: 875px;
+}
+
+.footer .social-media img.instagram-logo {
+  height: 46px;
+  position: relative;
+  top: 30px;
+  width: 49px;
+}
+
+.footer .social-media img.facebook-logo {
+  height: 36px;
+  position: relative;
+  top: 26px;
+  width: 41px;
+}
+
+.footer .social-media img.twitter-logo {
+  height: 45px;
+  position: relative;
+  top: 28px;
+  width: 50px;
+}
+
+.footer .footer-logo {
+  text-align: center;
+}
+
+.footer .footer-logo .logo-image {
+  height: 27px;
+  width: 125px;
+  cursor: pointer;
+}
+
+.footer-logo .logo-image .footer-logo-img {
+  object-fit: cover;
+  position: relative;
+  top: 2.7rem;
+}
+
+.footer .Copyright-footer {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  flex-direction: column;
+  color: #ffffffb2;
+  font-family: "Crimson Text", Helvetica;
+}
+
+.Copyright-footer .label .copyright-text-wrapper {
   font-size: 16px;
-  font-weight: 700;
-  height: 24px;
-  left: 126px;
-  letter-spacing: 0;
-  line-height: normal;
+  font-weight: 400;
+  height: 20px;
+  width: 64px;
+  position: relative;
+  top: 3.513rem;
+  right: 130px;
+  margin: 5px 0;
+}
+
+.Copyright-footer .copyright-icon {
+  height: 1.25rem;
+  position: relative;
+  width: 1.25rem;
+  top: 28px;
+  left: -85px;
+}
+
+.Copyright-footer .copyright-icon .vector {
+  height: 16px;
+  left: 0.125rem;
   position: absolute;
+  top: 0.125rem;
+  width: 16px;
+}
+
+.Copyright-footer .label-1 .secure-vote {
+  font-size: 16px;
+  font-weight: 400;
+  height: 20px;
+  width: 237px;
+  position: relative;
   text-align: center;
-  text-shadow: 0px 4px 4px #00000040;
-  top: 0;
-  width: 47px;
-}
-
-.registration-page .or-div-right {
-  height: 1px;
-  left: 177px;
-  object-fit: cover;
-  position: absolute;
-  top: 13px;
-  width: 123px;
-}
-
-.registration-page .register-link {
-  height: 27px;
-  left: 133px;
-  position: absolute;
-  top: 984px;
-  width: 235px;
-}
-
-.registration-page .login-instance {
-  left: 197px !important;
-  position: absolute !important;
-  top: 4px !important;
-  width: 36px !important;
-}
-
-.registration-page .design-component-instance-node {
-  left: -5px !important;
-}
-
-.registration-page .already-have-an {
-  color: #ffffff;
-  font-family: "Grenze-SemiBold", Helvetica;
-  font-size: 18px;
-  font-weight: 600;
-  height: 27px;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 0;
-}
-
-.registration-page .figure {
-  height: 562px;
-  left: 152px;
-  position: absolute;
-  top: 170px;
-  width: 322px;
-}
-
-.registration-page .header {
-  background-color: transparent;
-  height: 69px;
-  left: 60px;
-  position: absolute;
-  top: 40px;
-  width: 1320px;
-}
-
-.registration-page .back-btn-instance {
-  left: 0 !important;
-  position: absolute !important;
-  top: 16px !important;
-}
-
-.registration-page .back-btn-2 {
-  height: 1px !important;
-  left: 1px !important;
-  top: 16px !important;
-  width: 1px !important;
-}
-
-.registration-page .logo-2 {
-  height: 69px;
-  left: 1027px;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 293px;
+  top: 0.35rem;
+  left: 45px;
+  white-space: nowrap;
+  margin: 5px 0;
 }

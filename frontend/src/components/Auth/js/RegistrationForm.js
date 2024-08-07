@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import React from "react";
 import { LoginLink } from "../js/LoginLink";
 import { SubmitBtn } from "../js/SubmitBtn";
-import "../css/register.css";
+import "../css/component.css";
 
-export const Registration = ({ property1, className }) => {
+export const RegistrationForm = ({ property1, className }) => {
   return (
     <div className={`registration ${className}`}>
       <div className={`overlap ${property1}`}>
@@ -51,31 +51,54 @@ export const Registration = ({ property1, className }) => {
                   </div>
                 </div>
               </div>
-              <img className="toggle-switch" alt="Toggle switch" src="toggle-switch.svg" />
+              <img
+                className="toggle-switch"
+                alt="Toggle switch"
+                src="toggle-switch.svg"
+              />
               <div className="text-wrapper-11">Voter</div>
             </>
           )}
 
           {property1 === "candidate" && (
             <>
-              <img className="or-div-left" alt="Or div left" src="or-div-left-2.svg" />
+              <img
+                className="or-div-left"
+                alt="Or div left"
+                src="or-div-left-2.svg"
+              />
               <div className="text-wrapper-12">or</div>
-              <img className="or-div-right" alt="Or div right" src="or-div-right-2.svg" />
+              <img
+                className="or-div-right"
+                alt="Or div right"
+                src="or-div-right-2.svg"
+              />
             </>
           )}
         </div>
         <div className="or">
           {property1 === "voter" && (
             <>
-              <img className="or-div-left" alt="Or div left" src="or-div-left.svg" />
+              <img
+                className="or-div-left"
+                alt="Or div left"
+                src="or-div-left.svg"
+              />
               <div className="text-wrapper-12">or</div>
-              <img className="or-div-right" alt="Or div right" src="or-div-right.svg" />
+              <img
+                className="or-div-right"
+                alt="Or div right"
+                src="or-div-right.svg"
+              />
             </>
           )}
 
           {property1 === "candidate" && (
             <>
-              <LoginLink className="login-instance" divClassName="instance-node" />
+              <LoginLink
+                className="login-instance"
+                divClassName="instance-node"
+              />
               <div className="already-have-an">Already have and account?</div>
             </>
           )}
@@ -103,7 +126,9 @@ export const Registration = ({ property1, className }) => {
                   </div>
                   <div className="father-mother">
                     <div className="div-2" />
-                    <div className="text-wrapper-15">Father’s/Mother’s Name</div>
+                    <div className="text-wrapper-15">
+                      Father’s/Mother’s Name
+                    </div>
                   </div>
                   <div className="email-2">
                     <div className="div-2" />
@@ -136,7 +161,11 @@ export const Registration = ({ property1, className }) => {
                   <SubmitBtn className="submit-2" />
                 </div>
               </div>
-              <img className="toggle-switch" alt="Toggle switch" src="toggle-switch-2.svg" />
+              <img
+                className="toggle-switch"
+                alt="Toggle switch"
+                src="toggle-switch-2.svg"
+              />
               <div className="text-wrapper-16">Candidate</div>
             </>
           )}
@@ -146,6 +175,6 @@ export const Registration = ({ property1, className }) => {
   );
 };
 
-Registration.propTypes = {
+RegistrationForm.propTypes = {
   property1: PropTypes.oneOf(["candidate", "voter"]),
 };
