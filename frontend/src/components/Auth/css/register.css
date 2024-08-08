@@ -70,9 +70,9 @@
 .register-body .guidelines {
   height: 529px;
   left: 120px;
-  position: absolute;
   top: 842px;
   width: 539px;
+  position: absolute;
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.2) 0%,
@@ -99,6 +99,7 @@
   color: #cdf006;
   font-weight: 700;
   align-items: left;
+  display: flex;
 }
 
 .guidelines-for-voter .break {
