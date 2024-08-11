@@ -9,7 +9,7 @@ const RegistrationPage = () => {
     <div className="registration-page">
       <div className="registration-overlap">
         <header id="header" className="header">
-          <a href="/home" class="logo-link">
+          <a href="/home" className="logo-link">
             <img
               className="header-logo-img"
               alt="SecureVote"
@@ -35,7 +35,7 @@ const RegistrationPage = () => {
             src="/assets/svg/Login/register-logo.svg"
           />
           <RegistrationForm
-            property1="voter"
+            property1="candidate"
             className="registration-form-instance"
           />
           <div className="guidelines">

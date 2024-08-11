@@ -59,19 +59,27 @@
 }
 
 /* Registration Body */
-.registration-page .register-logo {
+.registration-overlap .register-body {
+  height: 1050px;
+  width: 100%;
+  display: flex;
+  top: 150px;
+  position: relative;
+}
+
+.register-body .register-logo {
   height: 562px;
   left: 152px;
   position: absolute;
-  top: 170px;
+  top: 10px;
   width: 322px;
 }
 
 .register-body .guidelines {
   height: 529px;
   left: 120px;
-  top: 842px;
-  width: 539px;
+  top: 700px;
+  width: 540px;
   position: absolute;
   background: linear-gradient(
     90deg,
@@ -79,47 +87,53 @@
     rgba(255, 255, 255, 0.2) 100%
   );
   border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
 .guidelines .guidelines-for-voter {
-  color: transparent;
+  color: #ffffff;
   font-family: "Gentium Book Plus", Helvetica;
   font-size: 30px;
   font-weight: 400;
-  height: 460px;
-  left: 35px;
-  letter-spacing: 0;
-  line-height: 30px;
-  position: absolute;
-  top: 34px;
-  width: 468px;
+  text-align: left;
+  line-height: 1.2;
+  margin: 15px;
+  padding: 0;
 }
 
 .guidelines-for-voter .guidelines-heading {
   color: #cdf006;
   font-weight: 700;
-  align-items: left;
-  display: flex;
+  margin-bottom: 10px;
 }
 
 .guidelines-for-voter .break {
-  color: #ffffff;
   font-family: "Inter", Helvetica;
-  font-size: 20px;
+  margin: 15px 0;
+  color: transparent;
 }
 
 .guidelines-for-voter .guidelines-list {
   color: #ffffff;
   font-family: "Battambang", Helvetica;
   font-size: 20px;
-  line-height: 2;
+  line-height: 1.8;
   list-style-position: inside;
-  padding-left: 0;
+  list-style-type: decimal;
+  padding-left: 5px;
   margin: 0;
 }
 
 .guidelines-for-voter .guidelines-list li {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+}
+
+.register-body .registration-form-instance {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 /* Footer */
@@ -140,7 +154,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-  gap: 0px;
+  transform: translateY(2rem);
   cursor: pointer;
 }
 
@@ -169,23 +183,23 @@
 }
 
 .footer .social-media img.instagram-logo {
-  height: 46px;
+  height: 45px;
   position: relative;
-  top: 30px;
-  width: 49px;
+  top: 5px;
+  width: 50px;
 }
 
 .footer .social-media img.facebook-logo {
-  height: 36px;
+  height: 45px;
   position: relative;
-  top: 26px;
+  top: 1px;
   width: 41px;
 }
 
 .footer .social-media img.twitter-logo {
   height: 45px;
   position: relative;
-  top: 28px;
+  top: 4px;
   width: 50px;
 }
 
@@ -193,16 +207,19 @@
   text-align: center;
 }
 
-.footer .footer-logo .logo-image {
+.footer-logo .logo-image {
   height: 27px;
   width: 125px;
   cursor: pointer;
+  top: 3.45rem;
+  left: 60px;
+  position: relative;
+  display: flex;
 }
 
-.footer-logo .logo-image .footer-logo-img {
+.logo-image .footer-logo-img {
   object-fit: cover;
   position: relative;
-  top: 2.7rem;
 }
 
 .footer .Copyright-footer {
@@ -220,8 +237,8 @@
   height: 20px;
   width: 64px;
   position: relative;
-  top: 3.513rem;
-  right: 130px;
+  top: 3.6rem;
+  right: 135px;
   margin: 5px 0;
 }
 

@@ -1,174 +1,176 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
+import FormField from "./FormField";
 import { LoginLink } from "../js/LoginLink";
 import { SubmitBtn } from "../js/SubmitBtn";
+import ToggleSwitch from "./ToggleSwitch";
 import "../css/component.css";
 
-export const RegistrationForm = ({ property1, className }) => {
+const isValidMobile = (mobile) => {
+  const regex = /^\+?\d{1,4}[\s.-]?\(?\d{1,4}\)?[\s.-]?\d{1,4}[\s.-]?\d{1,9}$/;
+  return regex.test(mobile);
+};
+
+export const RegistrationForm = ({ className }) => {
+  const [isVoter, setIsVoter] = useState(true);
+  const [dob, setDob] = useState(null);
+  const [mobile, setMobile] = useState("");
+  const [dobError, setDobError] = useState("");
+  const [mobileError, setMobileError] = useState("");
+
+  const toggleSwitch = () => {
+    setIsVoter((prevState) => !prevState);
+  };
+
+  const handleDateChange = (date) => {
+    if (!date) {
+      setDobError("Date is required");
+      return;
+    }
+
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+
+    //Basic validation checks
+    if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1900) {
+      setDobError("Invalid Date");
+    } else {
+      setDobError("");
+    }
+    setDob(date);
+  };
+
+  const handleMobileChange = (e) => {
+    setMobile(e.target.value);
+    if (!isValidMobile(e.target.value)) {
+      setMobileError("Invalid Mobile Number");
+    } else {
+      setMobileError("");
+    }
+  };
+
   return (
     <div className={`registration ${className}`}>
-      <div className={`overlap ${property1}`}>
+      <div className={`registration-frame ${isVoter ? "voter" : "candidate"}`}>
         <div className="overlap-group">
-          {property1 === "voter" && (
-            <>
-              <div className="form">
-                <div className="text-wrapper-2">Registration Form</div>
-                <div className="registration-form">
-                  <div className="name">
-                    <div className="div-2" />
-                    <div className="text-wrapper-3">Name</div>
-                  </div>
-                  <div className="DOB">
-                    <div className="div-2" />
-                    <div className="text-wrapper-4">Date Of Birth</div>
-                  </div>
-                  <div className="father-mother">
-                    <div className="div-2" />
-                    <div className="text-wrapper-5">Father’s/Mother’s Name</div>
-                  </div>
-                  <div className="email">
-                    <div className="div-2" />
-                    <div className="text-wrapper-6">Email</div>
-                  </div>
-                  <div className="mobile">
-                    <div className="div-2" />
-                    <div className="text-wrapper-7">Mobile No.</div>
-                  </div>
-                  <div className="password">
-                    <div className="password-frame" />
-                    <div className="text-wrapper-8">Password</div>
-                  </div>
-                  <div className="re-password">
-                    <div className="div-2" />
-                    <div className="text-wrapper-9">Re-enter Password</div>
-                  </div>
-                  <div className="submit-wrapper">
-                    <SubmitBtn className="submit-instance" />
-                  </div>
-                  <div className="aadhar">
-                    <div className="div-2" />
-                    <div className="text-wrapper-10">Aadhar ID/ Voter ID</div>
-                  </div>
-                </div>
+          <div className="form">
+            <div className="form-title">Registration Form</div>
+
+            {/* Toggle Switch and Text */}
+            <ToggleSwitch
+              stateProp={isVoter ? "off" : "on"}
+              className="toggle-switch-instance"
+              onClick={toggleSwitch}
+            />
+            <div
+              className={`toggle-text ${
+                isVoter ? "toggle-text-voter" : "toggle-text-candidate"
+              }`}
+            >
+              {isVoter ? "Voter" : "Candidate"}
+            </div>
+
+            {/* Common Details */}
+            <div
+              className={`registration-form ${isVoter ? "voter" : "candidate"}`}
+            >
+              <FormField
+                label="Name"
+                className="name"
+                placeholder="Enter your name"
+              />
+
+              <FormField
+                label="Father’s/Mother’s Name"
+                className="father-mother"
+                placeholder="Enter your father's/mother's name"
+              />
+              <FormField
+                label="Email"
+                className="email"
+                placeholder="xyz@email.com"
+              />
+              <FormField
+                label="Date Of Birth"
+                className="DOB"
+                isDateField
+                placeholder="dd/mm/yyyy"
+                value={dob}
+                onChange={handleDateChange}
+                error={!!dobError}
+                errorMessage={dobError}
+              />
+              <FormField
+                label="Mobile No."
+                className="mobile"
+                placeholder="+1 (123) 456-7890"
+                value={mobile}
+                onChange={handleMobileChange}
+                error={!!mobileError}
+                errorMessage="Invalid Mobile Number"
+              />
+              <FormField label="Password" className="password" />
+              <FormField label="Re-enter Password" className="re-password" />
+              <FormField label="Aadhar ID/ Voter ID" className="aadhar" />
+
+              {/* Conditional Fields */}
+              {!isVoter && (
+                <>
+                  <FormField
+                    label="Organization"
+                    className="org"
+                    placeholder="Enter your Organization name"
+                  />
+                  <FormField
+                    label="Assets"
+                    className="assets"
+                    isAsset
+                    placeholder="Enter your assets"
+                  />
+                </>
+              )}
+              <div className="submit-wrapper">
+                <SubmitBtn
+                  className={`submit-btn ${
+                    !isVoter
+                      ? "submit-instance-candidate"
+                      : "submit-instance-voter"
+                  }`}
+                />
               </div>
-              <img
-                className="toggle-switch"
-                alt="Toggle switch"
-                src="toggle-switch.svg"
-              />
-              <div className="text-wrapper-11">Voter</div>
-            </>
-          )}
+            </div>
+          </div>
 
-          {property1 === "candidate" && (
-            <>
-              <img
-                className="or-div-left"
-                alt="Or div left"
-                src="or-div-left-2.svg"
-              />
-              <div className="text-wrapper-12">or</div>
-              <img
-                className="or-div-right"
-                alt="Or div right"
-                src="or-div-right-2.svg"
-              />
-            </>
-          )}
-        </div>
-        <div className="or">
-          {property1 === "voter" && (
-            <>
-              <img
-                className="or-div-left"
-                alt="Or div left"
-                src="or-div-left.svg"
-              />
-              <div className="text-wrapper-12">or</div>
-              <img
-                className="or-div-right"
-                alt="Or div right"
-                src="or-div-right.svg"
-              />
-            </>
-          )}
+          {/* Or Division */}
+          <div className="or">
+            <img
+              className="or-div"
+              alt="Or divider"
+              src="/assets/svg/Login/or-div.svg"
+            />
+            <div className="or-text">or</div>
+            <img
+              className="or-div"
+              alt="Or divider"
+              src="/assets/svg/Login/or-div.svg"
+            />
+          </div>
 
-          {property1 === "candidate" && (
-            <>
-              <LoginLink
-                className="login-instance"
-                divClassName="instance-node"
-              />
-              <div className="already-have-an">Already have and account?</div>
-            </>
-          )}
-        </div>
-        <div className="register-link">
-          {property1 === "voter" && (
-            <>
-              <LoginLink className="login-2" divClassName="login-3" />
-              <div className="already-have-an">Already have and account?</div>
-            </>
-          )}
-
-          {property1 === "candidate" && (
-            <>
-              <div className="form-2">
-                <div className="text-wrapper-13">Registration Form</div>
-                <div className="registration-form-2">
-                  <div className="name">
-                    <div className="div-2" />
-                    <div className="text-wrapper-14">Name</div>
-                  </div>
-                  <div className="DOB-2">
-                    <div className="div-2" />
-                    <div className="text-wrapper-4">Date Of Birth</div>
-                  </div>
-                  <div className="father-mother">
-                    <div className="div-2" />
-                    <div className="text-wrapper-15">
-                      Father’s/Mother’s Name
-                    </div>
-                  </div>
-                  <div className="email-2">
-                    <div className="div-2" />
-                    <div className="text-wrapper-6">Email</div>
-                  </div>
-                  <div className="mobile-2">
-                    <div className="div-2" />
-                    <div className="text-wrapper-7">Mobile No.</div>
-                  </div>
-                  <div className="password-2">
-                    <div className="password-frame" />
-                    <div className="text-wrapper-8">Password</div>
-                  </div>
-                  <div className="re-password-2">
-                    <div className="div-2" />
-                    <div className="text-wrapper-9">Re-enter Password</div>
-                  </div>
-                  <div className="assets">
-                    <div className="re-passsword-frame" />
-                    <div className="text-wrapper-9">Assets</div>
-                  </div>
-                  <div className="org">
-                    <div className="div-2" />
-                    <div className="text-wrapper-9">Organization</div>
-                  </div>
-                  <div className="aadhar-2">
-                    <div className="aadhaar-frame" />
-                    <div className="text-wrapper-10">Aadhar ID/ Voter ID</div>
-                  </div>
-                  <SubmitBtn className="submit-2" />
-                </div>
-              </div>
-              <img
-                className="toggle-switch"
-                alt="Toggle switch"
-                src="toggle-switch-2.svg"
-              />
-              <div className="text-wrapper-16">Candidate</div>
-            </>
-          )}
+          {/* Login links */}
+          <div className={`register-link ${isVoter ? "voter" : "candidate"}`}>
+            <LoginLink
+              className={
+                isVoter ? "login-instance-voter" : "login-instance-candidate"
+              }
+              onClick={
+                isVoter
+                  ? () => alert("Voter Login")
+                  : () => alert("Candidate Login")
+              }
+            />
+            <div className="already-registered">Already have an account? </div>
+          </div>
         </div>
       </div>
     </div>
@@ -176,5 +178,9 @@ export const RegistrationForm = ({ property1, className }) => {
 };
 
 RegistrationForm.propTypes = {
-  property1: PropTypes.oneOf(["candidate", "voter"]),
+  className: PropTypes.string,
+};
+
+RegistrationForm.defaultProps = {
+  className: "",
 };

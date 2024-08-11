@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { useReducer } from "react";
-import "./style.css";
+import "../css/component.css";
 
-export const ToggleSwitch = ({ stateProp, className }) => {
+export const ToggleSwitch = ({ stateProp, className, onClick }) => {
   const [state, dispatch] = useReducer(reducer, {
     state: stateProp || "off",
   });
@@ -13,6 +13,9 @@ export const ToggleSwitch = ({ stateProp, className }) => {
       className={`toggle-switch ${state.state} ${className}`}
       onClick={() => {
         dispatch("click");
+        if (onClick) {
+          onClick();
+        }
       }}
     >
       <div className="toggle-btn" />
@@ -21,27 +24,30 @@ export const ToggleSwitch = ({ stateProp, className }) => {
 };
 
 function reducer(state, action) {
-  if (state.state === "off") {
-    switch (action) {
-      case "click":
-        return {
-          state: "on",
-        };
-    }
+  switch (state.state) {
+    case "off":
+      if (action === "click") {
+        return { state: "on" };
+      }
+      break;
+    case "on":
+      if (action === "click") {
+        return { state: "off" };
+      }
+      break;
+    default:
+      return state;
   }
-
-  if (state.state === "on") {
-    switch (action) {
-      case "click":
-        return {
-          state: "off",
-        };
-    }
-  }
-
-  return state;
 }
 
 ToggleSwitch.propTypes = {
   stateProp: PropTypes.oneOf(["off", "on"]),
+  className: PropTypes.string,
 };
+
+ToggleSwitch.defaultProps = {
+  stateProp: "off",
+  className: "",
+};
+
+export default ToggleSwitch;
