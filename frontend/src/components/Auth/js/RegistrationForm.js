@@ -6,48 +6,11 @@ import { SubmitBtn } from "../js/SubmitBtn";
 import ToggleSwitch from "./ToggleSwitch";
 import "../css/component.css";
 
-const isValidMobile = (mobile) => {
-  const regex = /^\+?\d{1,4}[\s.-]?\(?\d{1,4}\)?[\s.-]?\d{1,4}[\s.-]?\d{1,9}$/;
-  return regex.test(mobile);
-};
-
 export const RegistrationForm = ({ className }) => {
   const [isVoter, setIsVoter] = useState(true);
-  const [dob, setDob] = useState(null);
-  const [mobile, setMobile] = useState("");
-  const [dobError, setDobError] = useState("");
-  const [mobileError, setMobileError] = useState("");
 
   const toggleSwitch = () => {
     setIsVoter((prevState) => !prevState);
-  };
-
-  const handleDateChange = (date) => {
-    if (!date) {
-      setDobError("Date is required");
-      return;
-    }
-
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-
-    //Basic validation checks
-    if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1900) {
-      setDobError("Invalid Date");
-    } else {
-      setDobError("");
-    }
-    setDob(date);
-  };
-
-  const handleMobileChange = (e) => {
-    setMobile(e.target.value);
-    if (!isValidMobile(e.target.value)) {
-      setMobileError("Invalid Mobile Number");
-    } else {
-      setMobileError("");
-    }
   };
 
   return (
@@ -79,40 +42,39 @@ export const RegistrationForm = ({ className }) => {
                 label="Name"
                 className="name"
                 placeholder="Enter your name"
+                isNameField
               />
 
               <FormField
                 label="Father’s/Mother’s Name"
                 className="father-mother"
                 placeholder="Enter your father's/mother's name"
+                isNameField
               />
               <FormField
                 label="Email"
                 className="email"
                 placeholder="xyz@email.com"
+                isEmailField
+              />
+              <FormField label="Date Of Birth" className="DOB" isDateField />
+              <FormField label="Mobile No." className="mobile" isPhoneField />
+              <FormField
+                label="Password"
+                className="password"
+                isPasswordField
               />
               <FormField
-                label="Date Of Birth"
-                className="DOB"
-                isDateField
-                placeholder="dd/mm/yyyy"
-                value={dob}
-                onChange={handleDateChange}
-                error={!!dobError}
-                errorMessage={dobError}
+                label="Re-enter Password"
+                className="re-password"
+                isPasswordField
               />
               <FormField
-                label="Mobile No."
-                className="mobile"
-                placeholder="+1 (123) 456-7890"
-                value={mobile}
-                onChange={handleMobileChange}
-                error={!!mobileError}
-                errorMessage="Invalid Mobile Number"
+                label="Aadhar ID/ Voter ID"
+                className="aadhar"
+                placeholder="1234 5678 9123 4567"
+                isIDField
               />
-              <FormField label="Password" className="password" />
-              <FormField label="Re-enter Password" className="re-password" />
-              <FormField label="Aadhar ID/ Voter ID" className="aadhar" />
 
               {/* Conditional Fields */}
               {!isVoter && (
@@ -121,12 +83,13 @@ export const RegistrationForm = ({ className }) => {
                     label="Organization"
                     className="org"
                     placeholder="Enter your Organization name"
+                    isNameField
                   />
                   <FormField
                     label="Assets"
                     className="assets"
-                    isAsset
                     placeholder="Enter your assets"
+                    isAsset
                   />
                 </>
               )}

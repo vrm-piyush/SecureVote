@@ -147,7 +147,9 @@
 }
 
 /* Form Field */
-.input-frame .input-text {
+.input-frame .input-text,
+.input-frame .PhoneInputInput,
+.input-frame .name-input-container {
   background-color: #ffffff;
   border-radius: 7px;
   box-shadow: inset 0px 4px 4px #00000040;
@@ -155,6 +157,13 @@
   width: 100%;
   border: none;
   padding: 5px 10px;
+  box-sizing: border-box;
+  position: relative;
+  outline: none;
+
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 .input-frame .input-area {
@@ -177,76 +186,6 @@
   overflow-x: hidden;
 }
 
-.input-frame .date-picker {
-  border: 1px solid #ccc;
-  border-radius: 0.625rem;
-  padding: 8px;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 16px;
-}
-
-.date-picker.react-datepicker-wrapper {
-  display: inline-block;
-}
-
-.date-picker.react-datepicker__input-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.input-frame.input-error .input-text,
-.input-frame.input-error .date-picker {
-  border: 1px solid #ff0000 !important;
-}
-
-.date-error {
-  border: 1px solid #ff0000;
-}
-
-.input-error-container {
-  margin-bottom: 16px;
-}
-
-.custom-date-input {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.custom-date-input input {
-  border: 1px solid #ccc;
-  border-radius: 0.625rem;
-  padding: 8px;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 16px;
-  background-color: #ffffff;
-}
-
-.custom-date-input .calendar-icon {
-  position: absolute;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  color: #333;
-}
-
-.error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 4px;
-  position: absolute;
-  background-color: #ffffff;
-  padding: 4px;
-  border: 1px solid #ff0000;
-  border-radius: 4px;
-  box-shadow: 0px 4px 4px #0000001a;
-}
-
 .label {
   color: #ffffff;
   font-family: "Outfit", Helvetica;
@@ -258,6 +197,133 @@
   margin-bottom: 3px;
   margin-top: 20px;
   opacity: 0.8;
+}
+
+.input-frame .date-picker {
+  background-color: #ffffff;
+  border-radius: 7px;
+  box-shadow: inset 0px 4px 4px #00000040;
+  height: 40px;
+  width: 100%;
+  border: none;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+}
+
+/* Clear Icon Button */
+.name-input-container .MuiIconButton-root {
+  visibility: hidden;
+}
+
+.name-input-container .name-input:focus + .MuiIconButton-root,
+.name-input-container
+  .name-input:not(:placeholder-shown)
+  + .MuiIconButton-root {
+  visibility: visible;
+}
+
+/* Error Styling */
+.name-input-error {
+  border: 1px solid red;
+}
+
+.name-input-error {
+  border: 1px solid red;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  bottom: 5.45px;
+  font-family: "Darker Grotesque", Helvetica;
+  font-size: 16px;
+  color: #0d47a2;
+}
+
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  transform: translate(-15px, -5px);
+  font-family: "Darker Grotesque", Helvetica;
+}
+
+.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root {
+  bottom: 5px;
+  left: 10px;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  height: 46.1px;
+  width: 302px;
+  transform: translateX(-10px);
+}
+
+.css-qa7bje-MuiButtonBase-root-MuiPickersDay-root {
+  color: #021432;
+}
+
+.PhoneInput .PhoneInputCountry {
+  background-color: #ffffff;
+  border-radius: 7px;
+  box-shadow: inset 0px 4px 4px #00000040;
+  height: 40px;
+  border: none;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.PhoneInputCountry .PhoneInputCountryIcon {
+  box-shadow: none;
+}
+
+.phone-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.phone-input {
+  width: 100%;
+}
+
+.phone-input-error .PhoneInputInput {
+  border: 2px solid red;
+}
+
+.phone-input-container .phone-error-popup {
+  display: none;
+  position: relative;
+  top: 100%;
+  left: 306.5px;
+  bottom: 35px;
+  width: 150px;
+  padding: 8px;
+  background-color: #fdd;
+  border: 1px solid red;
+  border-radius: 10px;
+  z-index: 10;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.phone-error-popup.show-popup {
+  display: block;
+}
+
+.phone-error-popup .popup-arrow {
+  position: absolute;
+  bottom: 100%;
+  left: -8.5px;
+  top: 12px;
+  width: 0;
+  height: 0;
+  transform: rotate(270deg);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid red;
+}
+
+.popup-content {
+  color: red;
+  font-size: 14px;
 }
 
 /* Registration Form */
