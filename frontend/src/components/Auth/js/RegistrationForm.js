@@ -43,13 +43,15 @@ export const RegistrationForm = ({ className }) => {
                 className="name"
                 placeholder="Enter your name"
                 isNameField
+                isRequired
               />
 
               <FormField
-                label="Father’s/Mother’s Name"
+                label="Father’s / Mother’s Name"
                 className="father-mother"
                 placeholder="Enter your father's/mother's name"
                 isNameField
+                isRequired
               />
               <FormField
                 label="Email"
@@ -57,23 +59,36 @@ export const RegistrationForm = ({ className }) => {
                 placeholder="xyz@email.com"
                 isEmailField
               />
-              <FormField label="Date Of Birth" className="DOB" isDateField />
-              <FormField label="Mobile No." className="mobile" isPhoneField />
+              <FormField
+                label="Date Of Birth"
+                className="DOB"
+                isDateField
+                isRequired
+              />
+              <FormField
+                label="Mobile No."
+                className="mobile"
+                isPhoneField
+                isRequired
+              />
               <FormField
                 label="Password"
                 className="password"
                 isPasswordField
+                isRequired
               />
               <FormField
                 label="Re-enter Password"
                 className="re-password"
                 isPasswordField
+                isRequired
               />
               <FormField
                 label="Aadhar ID/ Voter ID"
                 className="aadhar"
-                placeholder="1234 5678 9123 4567"
+                placeholder="1234 5678 9123"
                 isIDField
+                isRequired
               />
 
               {/* Conditional Fields */}
@@ -82,14 +97,15 @@ export const RegistrationForm = ({ className }) => {
                   <FormField
                     label="Organization"
                     className="org"
-                    placeholder="Enter your Organization name"
-                    isNameField
+                    placeholder="Organization Name"
+                    isRequired
                   />
                   <FormField
                     label="Assets"
                     className="assets"
-                    placeholder="Enter your assets"
+                    placeholder="Assets"
                     isAsset
+                    isRequired
                   />
                 </>
               )}
