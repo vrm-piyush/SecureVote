@@ -4,28 +4,15 @@ import React, { useState } from "react";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { parseISO } from "date-fns";
 import { TextField } from "@mui/material";
-import PhoneInput, {
-  isPossiblePhoneNumber,
-  isValidPhoneNumber,
-} from "react-phone-number-input";
+import { NameField } from "../FormField/fields/NameField.js";
+import { EmailField } from "../FormField/fields/EmailField.js";
+import { PhoneField } from "../FormField/fields/PhoneField.js";
+import { IDField } from "../FormField/fields/IDField.js";
+import { OrganizationField } from "../FormField/fields/OrganizationField.js";
+import { AssetField } from "../FormField/fields/AssetField.js";
 import "../css/component.css";
 import "react-phone-number-input/style.css";
-
-// Constants
-const VALIDATION_THRESHOLD = 10;
-const NAME_MIN_LENGTH = 1;
-const NAME_MAX_LENGTH = 50;
-const NAME_REGEX = /^[A-Za-z.]+$/;
-const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const AADHAAR_REGEX = /^\d{4} \d{4} \d{4}$/;
-const EPIC_REGEX = /^[A-Z]{3}[0-9]{7}$/;
-const ORGANIZATION_MIN_LENGTH = 2;
-const ORGANIZATION_MAX_LENGTH = 50;
-const ORGANIZATION_REGEX = /^[A-Za-z0-9\-_'&., ]+$/;
-const ASSET_MIN_LENGTH = 10;
-const ASSET_MAX_LENGTH = 500;
 
 //Reusable field component
 export const FormField = ({
@@ -41,194 +28,44 @@ export const FormField = ({
   isAssetField,
   isRequired,
 }) => {
-  const [DOBvalue, setDOBValue] = useState(null);
-  const [value, setValue] = useState("");
-  const [nameValue, setNameValue] = useState({ firstName: "", lastName: "" });
-  const [nameError, setNameError] = useState({ firstName: "", lastName: "" });
+  const [field, setField] = useState(null);
   const [error, setError] = useState("");
-  const [interactionCount, setInteractionCount] = useState({
-    firstName: 0,
-    lastName: 0,
-  });
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [focused, setFocused] = useState(false);
 
   // Handle change for different field types
-  const handleChange = (event, fieldName) => {
-    if (fieldName === "phone") {
-      const phone = typeof event === "number" ? event.toString() : event || "";
-      setValue(phone);
-      validatePhone(phone);
-    } else {
-      const inputValue = event.target.value || "";
+  const handleChange = (event) => {
+    let value = event.target ? event.target.value : event;
 
-      if (fieldName === "firstName" || fieldName === "lastName") {
-        setNameValue((prevValue) => ({
-          ...prevValue,
-          [fieldName]: inputValue,
-        }));
-        validateName(inputValue, fieldName);
-
-        // Update interaction count based on input
-        setInteractionCount((prev) => ({
-          ...prev,
-          [fieldName]: inputValue ? prev[fieldName] + 1 : -1,
-        }));
-      } else if (fieldName === "date") {
-        const date = typeof event === "string" ? parseISO(event) : event;
-        setDOBValue(date);
-      } else if (fieldName === "id") {
-        const id = event.target.value.toUpperCase();
-        setValue(formatID(id));
-        validateField(fieldName, id);
-      } else {
-        setValue(inputValue);
-        validateField(fieldName, inputValue);
-      }
-    }
-  };
-
-  // Handle focus for different field types
-  const handleFocus = (fieldName) => {
-    if (fieldName === "firstName" || fieldName === "lastName") {
-      setInteractionCount((prev) => ({
-        ...prev,
-        [fieldName]: prev[fieldName] + 1,
-      }));
-    } else {
-      setFocused(true);
-    }
-  };
-
-  const handleBlur = (fieldName) => {
-    if (fieldName === "firstName" || fieldName === "lastName") {
-      handleNameBlur();
-    } else {
-      setFocused(false);
-      if (value) {
-        validateField(fieldName);
-      }
-    }
-  };
-
-  const handleNameBlur = () => {
     if (isNameField) {
-      // No tooltip if the count is 0 (first interaction)
-      if (
-        (interactionCount.firstName < 1 || interactionCount.lastName < 1) &&
-        (nameValue.firstName === "" || nameValue.lastName === "")
-      ) {
-        setError("Please enter your name. This field is required.");
-        setShowTooltip(true);
-      } else {
-        setShowTooltip(false);
-      }
-    }
-  };
-
-  // Validate fields based on field type
-  const validateField = (fieldName, inputValue = value) => {
-    if (isNameField && fieldName in nameValue) {
-      validateName(nameValue[fieldName], fieldName);
+      const newField = new NameField(value.firstName, value.lastName);
+      newField.validate();
+      setField(newField);
+      setError(newField.errorMessage);
     } else if (isEmailField) {
-      validateEmail(inputValue);
+      const newField = new EmailField(value);
+      newField.validate();
+      setField(newField);
+      setError(newField.errorMessage);
     } else if (isPhoneField) {
-      validatePhone(inputValue);
+      const newField = new PhoneField(value);
+      newField.validate();
+      setField(newField);
+      setError(newField.errorMessage);
     } else if (isIDField) {
-      validateID(inputValue);
+      const newField = new IDField(value);
+      newField.validate();
+      setField(newField);
+      setError(newField.errorMessage);
     } else if (isOrgField) {
-      validateOrganization(inputValue);
+      const newField = new OrganizationField(value);
+      newField.validate();
+      setField(newField);
+      setError(newField.errorMessage);
     } else if (isAssetField) {
-      validateAsset(inputValue);
+      const newField = new AssetField(value);
+      newField.validate();
+      setField(newField);
+      setError(newField.errorMessage);
     }
-  };
-
-  const validateName = (name, fieldName) => {
-    let errorMsg = "";
-    const totalLength = (nameValue.firstName + nameValue.lastName).replace(
-      /\s+/g,
-      ""
-    ).length;
-
-    if (totalLength < NAME_MIN_LENGTH) {
-      errorMsg = `Name must be at least ${NAME_MIN_LENGTH} characters long.`;
-    } else if (totalLength > NAME_MAX_LENGTH) {
-      errorMsg = `Name must be at most ${NAME_MAX_LENGTH} characters long.`;
-    } else if (!NAME_REGEX.test(name)) {
-      errorMsg = `Name can only contain letters and '.'.`;
-    }
-
-    setNameError((prevError) => ({
-      ...prevError,
-      [fieldName]: errorMsg,
-    }));
-    setError(errorMsg);
-    setShowTooltip(!!errorMsg);
-  };
-
-  const validateEmail = (email) => {
-    const errorMsg = EMAIL_REGEX.test(email) ? "" : "Invalid email address.";
-
-    setError(errorMsg);
-    setShowTooltip(!!errorMsg);
-  };
-
-  const validatePhone = (phone) => {
-    let errorMsg = "";
-    if (phone.length > VALIDATION_THRESHOLD) {
-      if (!isValidPhoneNumber(phone) && isPossiblePhoneNumber(phone)) {
-        errorMsg = "Invalid phone number.";
-      }
-    }
-    setError(errorMsg);
-    setShowTooltip(!!errorMsg);
-  };
-
-  const validateID = (id) => {
-    const formattedID = formatID(id);
-    const cleanID = id.replace(/\s+/g, "");
-
-    const errorMsg =
-      (cleanID.length === 12 && AADHAAR_REGEX.test(formattedID)) ||
-      (cleanID.length === 10 && EPIC_REGEX.test(cleanID))
-        ? ""
-        : "Invalid ID";
-
-    setError(errorMsg);
-    setShowTooltip(!!errorMsg);
-  };
-
-  const validateOrganization = (name) => {
-    const errorMsg =
-      name.length < ORGANIZATION_MIN_LENGTH ||
-      name.length > ORGANIZATION_MAX_LENGTH
-        ? `Organization name must be between ${ORGANIZATION_MIN_LENGTH} and ${ORGANIZATION_MAX_LENGTH} characters.`
-        : !ORGANIZATION_REGEX.test(name)
-        ? "Invalid organization name format."
-        : "";
-
-    setError(errorMsg);
-    setShowTooltip(!!errorMsg);
-  };
-
-  const validateAsset = (asset) => {
-    const errorMsg =
-      asset.length < ASSET_MIN_LENGTH || asset.length > ASSET_MAX_LENGTH
-        ? `Asset description must be between ${ASSET_MIN_LENGTH} and ${ASSET_MAX_LENGTH} characters.`
-        : "";
-
-    setError(errorMsg);
-    setShowTooltip(!!errorMsg);
-  };
-
-  const formatID = (id) => {
-    const cleanID = id.replace(/\s+/g, "");
-    if (/^\d*$/.test(cleanID)) {
-      return cleanID.match(/.{1,4}/g)?.join(" ") || id;
-    } else if (/^[A-Z]{0,3}[A-Z0-9]{0,7}$/.test(cleanID)) {
-      return cleanID;
-    }
-    return id;
   };
 
   return (

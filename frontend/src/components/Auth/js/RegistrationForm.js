@@ -98,13 +98,14 @@ export const RegistrationForm = ({ className }) => {
                     label="Organization"
                     className="org"
                     placeholder="Organization Name"
+                    isOrgField
                     isRequired
                   />
                   <FormField
                     label="Assets"
                     className="assets"
                     placeholder="Assets"
-                    isAsset
+                    isAssetField
                     isRequired
                   />
                 </>

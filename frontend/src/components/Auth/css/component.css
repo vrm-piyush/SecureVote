@@ -152,7 +152,7 @@
 .phone-input-container .tooltip-container,
 .id-input-container .tooltip-container,
 .org-input-container .tooltip-container,
-.assets-input-container .tooltip-container {
+.asset-input-container .tooltip-container {
   position: absolute;
   background-color: #ff0000;
   color: #fff;
@@ -184,20 +184,24 @@
 }
 
 .email-input-container .tooltip-container,
-.id-input-container .tooltip-container {
+.id-input-container .tooltip-container,
+.org-input-container .tooltip-container {
   bottom: -7px;
 }
 
 .email-input-container .tooltip-arrow,
 .phone-input-container .tooltip-arrow,
 .id-input-container .tooltip-arrow,
-.org-input-container .tooltip-arrow,
-.assets-input-container .tooltip-arrow {
+.org-input-container .tooltip-arrow {
   transform: translateY(-8px) rotate(-90deg);
 }
 
 .phone-input-container .tooltip-container {
   bottom: 5px;
+}
+
+.asset-input-container .tooltip-container {
+  transform: translateY(-150px);
 }
 
 /* Form Field */
@@ -260,7 +264,7 @@
 .phone-input-container .input-text.input-error,
 .id-input-container .input-text.input-error,
 .org-input-container .input-text.input-error,
-.assets-input-container .input-area.input-error {
+.asset-input-container .input-area.input-error {
   border: 2px solid red;
 }
 

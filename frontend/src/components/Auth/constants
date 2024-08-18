@@ -1,0 +1,36 @@
+export const FIELD_CONFIGS = {
+  name: {
+    minLength: 2,
+    maxLength: 50,
+    regex: /^[a-zA-Z\s]*$/,
+    errorMessage: "Name must contain only letters and spaces.",
+  },
+  email: {
+    regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    errorMessage: "Invalid email.",
+  },
+  organization: {
+    minLength: 2,
+    maxLength: 100,
+    regex: /^[a-zA-Z\s]*$/,
+    errorMessage: "Organization name must contain only letters and spaces.",
+  },
+  assets: {
+    minLength: 2,
+    maxLength: 50,
+    regex: /^[a-zA-Z\s]*$/,
+    errorMessage: "Asset name must contain only letters and spaces.",
+  },
+  aadhaar: {
+    regex: /^\d{4}\s\d{4}\s\d{4}$/,
+    errorMessage: "Aadhaar number must be in the format 1234 5678 9123.",
+  },
+  epic: {
+    regex: /^[A-Z]{3}\d{7}$/,
+    errorMessage: "EPIC number must be 3 letters followed by 7 digits.",
+  },
+  phone: {
+    validationThreshold: 10,
+    errorMessage: "Invalid phone number.",
+  },
+};
