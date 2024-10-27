@@ -4,6 +4,7 @@ import FormField from "./FormField";
 import { LoginLink } from "../js/LoginLink";
 import { SubmitBtn } from "../js/SubmitBtn";
 import ToggleSwitch from "./ToggleSwitch";
+import Checkbox from "./Checkbox";
 import "../css/component.css";
 
 export const RegistrationForm = ({ className }) => {
@@ -110,6 +111,12 @@ export const RegistrationForm = ({ className }) => {
                   />
                 </>
               )}
+              <div className="terms">
+                <Checkbox className="checkbox-instance" enabled={false} />
+                <label className="t&c">
+                  I accept the <a>Terms&amp;Conditions</a>
+                </label>
+              </div>
               <div className="submit-wrapper">
                 <SubmitBtn
                   className={`submit-btn ${
